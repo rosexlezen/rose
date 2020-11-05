@@ -2,9 +2,35 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
 
-    const channel = client.channels.cache.find(c => c.name === 'logs');
-    if(!channel) return;
-    channel.send(`meow`);
+        // Permissions
+        if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry but you cannot execute this command!");
+        if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("I cannot execute this command! Please give me ``Kick Permissions``");
+    
+        var warnUser = message.guild.member(message.mentions.users.first() || message.guild.member.get(args[0]));
+        if (!warnUser) return message.reply("I cannot find the user.");
+        var reason = args.slice(1).join(" ");
+    
+        if(warnUser.hasPermission("ADMINISTRATOR")) return message.reply("you cannot warn this user.");
+    
+        // Command
+    
+        var warnEmbed = new discord.MessageEmbed()
+        .setColor('#d105ff')
+        .setTitle('Warned User!')
+        .setDescription('Warn information:')
+        .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/773928084382154752/403-4036502_alarm-clipart-tornado-siren-warning-icon-png-download.png')
+        .addFields(
+            {name: `Warned By:`, value: `${message.author}`},
+            {name: `User Warned:`, value: `${warnUser} (${warnUser.id})`},
+            {name: `Reason:`, value: `${reason}`},
+            {name: `Total Warns (THIS DOES NOT WORK):`, value: warns[warnUser.id].warns},
+            )
+        .setTimestamp()
+        .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
+        
+        var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
+        if(!channel) return message.channel.send(warnEmbed) && message.channel.send('``please create a "logs" channel so warn will display there.``');
+        channel.send(warnEmbed);
 
     }
 
