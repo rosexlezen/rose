@@ -33,7 +33,6 @@ module.exports.run = async(client, message, args) => {
         if (err) console.log(err);
     });
 
-    message.channel.send("WARNING! This feature is still in maintenance!")
     var warnEmbed = new discord.MessageEmbed()
     .setColor('#d105ff')
 	.setTitle('Warned User!')
@@ -43,7 +42,7 @@ module.exports.run = async(client, message, args) => {
         {name: `Warned By:`, value: `${message.author}`},
         {name: `User Warned:`, value: `${warnUser} (${warnUser.id})`},
         {name: `Reason:`, value: `${reason}`},
-        {name: `Total Warns:`, value: warns[warnUser.id].warns},
+        {name: `Total Warns (THIS DOES NOT WORK):`, value: warns[warnUser.id].warns},
         )
 	.setTimestamp()
     .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
