@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 const fs = require("fs");
-const warns = JSON.parse(fs.readFileSync("../warnings.json", "utf8"));
+const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 module.exports.run = async(client, message, args) => {
 
@@ -38,7 +38,7 @@ module.exports.run = async(client, message, args) => {
         {name: `Warned By:`, value: `${message.author}`},
         {name: `User Warned:`, value: `${warnUser} (${warnUser.id})`},
         {name: `Reason:`, value: `${reason}`},
-        {name: `Total Warns:`, value: warns[warnUser.id].warn},
+        {name: `Total Warns:`, value: warns[warnUser.id].warns},
         )
 	.setTimestamp()
     .setFooter('creator: Lezen#3283', 'https://cdn.discordapp.com/attachments/773879672676548609/773880029859020820/awdaw.jpg');
