@@ -63,7 +63,7 @@ client.on("message", async message =>{
     .setTimestamp()
     .setColor("#d105ff");
 
-    var channel = client.channels.cache.find(c => c.name === 'logs');
+    var channel = message.channels.cache.find(c => c.name === 'logs');
     if(!channel) return;
     channel.send(embedMsg);
     });
