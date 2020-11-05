@@ -7,10 +7,11 @@ module.exports.run = async(client, message, args) => {
         if (args[0] > 100) return message.channel.send("Please input a number less than 100.")
         if (args[0] < 1) return message.channel.send("Please input a number larger than 0.")
         if (!args[0]) return message.replchannel.send("how many messages do you want to delete?")
+        if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("I cannot execute this command! Please give me ``Manage Messages``");
 
         var embedDeleted = new discord.MessageEmbed()
             .setDescription("**Deleting Messages!**")
-            .setColor("#8080f2")
+            .setColor("#d105ff")
             .addField(`_Messages deleted_:`, args[0])
 
             message.delete()
