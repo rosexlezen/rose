@@ -44,8 +44,8 @@ module.exports.run = async(client, message, args) => {
     .setFooter('creator: Lezen#3283', 'https://cdn.discordapp.com/attachments/773879672676548609/773880029859020820/awdaw.jpg');
     
     var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
+    if(!channel) return message.channel.send(`please create a "logs" channel to see warn messages.`) && message.channel.send(warnEmbed);
     channel.send(warnEmbed);
-    if(!channel) return message.channel.send(`please create a "logs" channel to see warn messages.`);
 
 } 
 
