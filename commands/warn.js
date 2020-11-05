@@ -11,7 +11,7 @@ module.exports.run = async(client, message, args) => {
     if (!warnUser) return message.reply("I cannot find the user.");
     var reason = args.slice(1).join(" ");
 
-    if(warnUser.hasPermission("MANAGE_MESSAGES") || warnUser.hasPermission("ADMINISTRATOR")) return message.reply("you cannot warn this user.");
+    if(warnUser.hasPermission("ADMINISTRATOR")) return message.reply("you cannot warn this user.");
 
 } 
 
