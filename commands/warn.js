@@ -6,8 +6,8 @@ module.exports.run = async(client, message, args) => {
 
     // Permissions
     if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry but you cannot execute this command!");
-    if (!args[0]) return message.reply("you need to specify an user.");
-    if (!message.contains.users.mentions.first()) return message.reply("you need to specify an user.");
+    if (!args[0]) return message.reply("you need to specify a user.");
+    if (!message.contains.users.mentions.first()) return message.reply("you need to tag a user.");
     if (!args[1]) return message.reply("you need to specify a valid reason!");
     if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("I cannot execute this command! Please give me ``Kick Permissions``");
 
