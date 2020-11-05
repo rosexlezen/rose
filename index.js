@@ -50,23 +50,23 @@ client.on("message", async message =>{
 //
 //
 
-//     client.on("messageDelete", messageDeleted => {
+if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Something went wrong...");
+    client.on("messageDelete", messageDeleted => {
 
-//     if(messageDeleted.author.bot) return;
-//     var content = messageDeleted.content;
-//     if(!content) content = "<Empty Message>";
+    if(messageDeleted.author.bot) return;
+    var content = messageDeleted.content;
+    if(!content) content = "<Empty Message>";
 
-//     var response = `**Message ID:** ${messageDeleted.id}\n**Message Author:** ${message.author}\n**Channel:** ${messageDeleted.channel}\n**Message:** ${content}`;
-//     var embedMsg = new discord.MessageEmbed()
-//     .setAuthor(`${messageDeleted.author.tag} ( ${messageDeleted.author.id} )`, `${messageDeleted.author.avatarURL({ size:4096 })}`)
-//     .setDescription(response)
-//     .setTimestamp()
-//     .setColor("#d105ff");
+    var embedMsg = new discord.MessageEmbed()
+    .setAuthor(`${messageDeleted.author.tag} ( ${messageDeleted.author.id} )`, `${messageDeleted.author.avatarURL({ size:4096 })}`)
+    .setDescription(`**Message ID:** ${messageDeleted.id}\n**Message Author:** ${message.author}\n**Channel:** ${messageDeleted.channel}\n**Message:** ${content}`)
+    .setTimestamp()
+    .setColor("#d105ff");
 
-//     const channel = client.channels.cache.find(c => c.name === 'logs');
-//     if(!channel) return;
-//     channel.send(embedMsg);
-//     });
+    var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
+    if(!channel) return message.channel.send('``This shouldnt here..``');
+    channel.send(embedMsg);
+    });
 });
 
 client.login(process.env.token);
