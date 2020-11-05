@@ -70,7 +70,6 @@ client.on("message", async message =>{
 
 
     client.on("messageDelete", message =>{
-        if(!content) content = "[Empty Message]";
             const channel = client.channels.cache.find(c => c.name === 'logs');
             if (channel) {
             var response = `**Message ID:** ${messageDeleted.id}\n**Message Author:** ${message.author}\n**Channel:** ${messageDeleted.channel}\n**Message:** ${content}`;
