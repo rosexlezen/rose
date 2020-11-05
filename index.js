@@ -69,7 +69,7 @@ client.on("message", async message =>{
     // });
 
 
-    client.on("messageDelete", message =>{
+    client.on("messageDelete", messageDeleted =>{
 
     if(messageDeleted.author.bot) return;
     var content = messageDeleted.content;
