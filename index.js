@@ -2,7 +2,6 @@ const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
 const fs = require("fs"); 
 let fetch = require('node-fetch'); // idek if i'm using this
-const client = new Client({partials: ['MESSAGE'] });
 
 const client = new discord.Client();
 client.commands = new discord.Collection();
@@ -71,10 +70,9 @@ client.on("message", async message =>{
 
 
     client.on("messageDelete", message =>{
-        if(!message.partials) {
+        if(!content) content = "[Empty Message]";
             const channel = client.channels.cache.find(c => c.name === 'logs');
             if (channel) {
-
             var response = `**Message ID:** ${messageDeleted.id}\n**Message Author:** ${message.author}\n**Channel:** ${messageDeleted.channel}\n**Message:** ${content}`;
             var embedMsg = new discord.MessageEmbed()
             .setAuthor(`${messageDeleted.author.tag} ( ${messageDeleted.author.id} )`, `${messageDeleted.author.avatarURL({ size:4096 })}`)
@@ -82,7 +80,6 @@ client.on("message", async message =>{
             .setTimestamp()
             .setColor("#d105ff");
             }
-        }
     });
 
 });
