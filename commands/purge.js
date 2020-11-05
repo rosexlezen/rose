@@ -8,7 +8,7 @@ module.exports.run = async(client, message, args) => {
         if (args[0] < 1) return message.channel.send("Please input a number larger than 0.")
         if (!args[0]) return message.replchannel.send("how many messages do you want to delete?")
 
-        var embedDeleted = new Discord.MessageEmbed()
+        var embedDeleted = new discord.MessageEmbed()
             .setDescription("**Deleting Messages!**")
             .setColor("#8080f2")
             .addField(`_Messages deleted_:`, args[0])
@@ -21,5 +21,5 @@ module.exports.run = async(client, message, args) => {
 } 
 
 module.exports.help = {
-    name: "purge",
+    name: "purge"
 }
