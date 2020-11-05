@@ -58,7 +58,7 @@ client.on("message", async message =>{
 
     var response = `**Message ID:** ${messageDeleted.id}\n**Message Author:** ${message.author}\n**Channel:** ${messageDeleted.channel}\n**Message:** ${content}`;
 
-    var embedMsg = new Discord.MessageEmbed()
+    var embedMsg = new discord.MessageEmbed()
     .setAuthor(`${messageDeleted.author.tag} ( ${messageDeleted.author.id} )`, `${messageDeleted.author.avatarURL({ size:4096 })}`)
     .setDescription(response)
     .setTimestamp()
