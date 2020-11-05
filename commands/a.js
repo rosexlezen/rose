@@ -8,9 +8,13 @@ module.exports.run = async(client, message, args) => {
     
         // Command
 
-        var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
-        if(!channel) return message.channel.send('``please create a "logs" channel so warn will display there.``');
-        channel.send(`test`);
+        // var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
+        // if(!channel) return message.channel.send('``please create a "logs" channel so warn will display there.``');
+        // channel.send(`test`);
+
+        const channel = client.channels.cache.find(c => c.name === 'logs');
+        if(!channel) return;
+        channel.send(embedMsg);
 
     }
 
