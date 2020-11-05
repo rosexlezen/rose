@@ -63,7 +63,7 @@ client.on("message", async message =>{
     .setColor("#d105ff");
 
     var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
-    if(!channel) return message.channel.send('``This shouldnt here..``');
+    if(!channel) return;
     channel.send(embedMsg);
     });
 });
