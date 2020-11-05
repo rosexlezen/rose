@@ -1,6 +1,5 @@
 const discord = require("discord.js");
 const fs = require("fs");
-// const warns = require("./data/warnings.json");
 const warns = JSON.parse(fs.readFileSync("./data/warnings.json", "utf8"));
 
 
@@ -21,16 +20,14 @@ module.exports.run = async(client, message, args) => {
 
     // Command
 
-    if (!warns[warnUser.id]) warns[warnUser.id] = {
+    if (!warns[warnUser.id]) {
+        warns[warnUser.id] = {
         warns: 0
-    };
+        }
+    }
 
     warns[warnUser.id].warns++;
     warns[warnUser.id].name = message.author.tag; 
-
-    fs.writeFile("./data/warnings.json", JSON.stringify(warns), (err) =>{
-        if (err) console.log(err);
-    });
 
     var warnEmbed = new discord.MessageEmbed()
     .setColor('#d105ff')
@@ -50,6 +47,10 @@ module.exports.run = async(client, message, args) => {
     if(!channel) return message.channel.send('``please create a "logs" channel to see warn messages.``') && message.channel.send(warnEmbed);
     channel.send(warnEmbed);
 
+    fs.writeFile("./data/warnings.json", JSON.stringify(warns), (err) =>{
+        if (err) console.log(err);
+    });
+    
 } 
 
 module.exports.help = {
