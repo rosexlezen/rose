@@ -50,7 +50,6 @@ client.on("message", async message =>{
 //
 //
 
-if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Something went wrong...");
     client.on("messageDelete", messageDeleted => {
 
     if(messageDeleted.author.bot) return;
