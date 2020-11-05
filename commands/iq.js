@@ -8,5 +8,6 @@ module.exports.run = async(client, message, args) => {
 } 
 
 module.exports.help = {
-    name: "iq" || "iqmeter"
+    name: "iq",
+    aliases: ["iqmeter"],
 }
