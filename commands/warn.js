@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 const fs = require("fs");
-const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+const warns = JSON.parse(fs.readFile("./warnings.json", "utf8"));
 
 module.exports.run = async(client, message, args) => {
 
@@ -19,14 +19,14 @@ module.exports.run = async(client, message, args) => {
 
     // Command
 
-    if(!warns[warnUser.id]) warns[warnUser.id] = {
+    if (!warns[warnUser.id]) warns[warnUser.id] = {
         warns: 0
     };
 
     warns[warnUser.id].warns++; 
 
     fs.writeFile("./warnings.json", JSON.stringify(warns), (err) =>{
-        if(err) console.log(err);
+        if (err) console.log(err);
     });
 
     var warnEmbed = new discord.MessageEmbed()
