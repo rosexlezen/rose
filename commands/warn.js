@@ -26,7 +26,7 @@ module.exports.run = async(client, message, args) => {
     };
 
     warns[warnUser.id].warns++;
-    warns[idUser].name = message.author.tag; 
+    warns[warnUser.id].name = message.author.tag; 
 
     fs.writeFile("./data/warnings.json", JSON.stringify(warns), (err) =>{
         if (err) console.log(err);
