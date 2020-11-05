@@ -1,4 +1,4 @@
-const math = require("mathjs");
+const math = require("math.js");
 const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {

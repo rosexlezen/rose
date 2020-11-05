@@ -21,8 +21,9 @@ module.exports.run = async(client, message, args) => {
 		{ name: '/uptime', value: '_Get the time the bot has been up and running_', inline: true },
 		{ name: '/dice', value: '_Throw a dice_' },
 		{ name: '/iq (or /iqmeter)', value: `get your IQ.` },
-		{name: '/coin', value: `does a coinflip` },
-		{name: '/rps (rock, paper or scissors)', value: `play rock paper scissors with the bot.` },
+		{ name: '/coin', value: `does a coinflip` },
+		{ name: '/rps (rock, paper or scissors)', value: `play rock paper scissors with the bot.` },
+		{ name: '/calc', value: `Calculates everything for you.` },
 	)
 	.setImage('https://cdn.discordapp.com/attachments/773879672676548609/773880694296281098/images.jpg')
 	.setTimestamp()
