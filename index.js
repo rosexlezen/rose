@@ -44,28 +44,6 @@ client.on("message", async message =>{
     var commands = client.commands.get(command.slice(prefix.length));
     if(commands) commands.run(client, message, args);
 
-//
-//
-// Deleted Messages Logs
-//
-//
-
-    client.on("messageDelete", messageDeleted => {
-
-    if(messageDeleted.author.bot) return;
-    var content = messageDeleted.content;
-    if(!content) content = "<Empty Message>";
-
-    var embedMsg = new discord.MessageEmbed()
-    .setAuthor(`${messageDeleted.author.tag} ( ${messageDeleted.author.id} )`, `${messageDeleted.author.avatarURL({ size:4096 })}`)
-    .setDescription(`**Message ID:** ${messageDeleted.id}\n**Message Author:** ${message.author}\n**Channel:** ${messageDeleted.channel}\n**Message:** ${content}`)
-    .setTimestamp()
-    .setColor("#d105ff");
-
-    var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
-    if(!channel) return message.channel.send('``This shouldnt here..``');
-    channel.send(embedMsg);
-    });
 });
 
 client.login(process.env.token);

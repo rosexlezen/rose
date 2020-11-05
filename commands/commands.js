@@ -20,6 +20,7 @@ module.exports.run = async(client, message, args) => {
 		{ name: '/ping', value: `_Get the bots' ping_`, inline: true },
 		{ name: '/uptime', value: '_Get the time the bot has been up and running_', inline: true },
 		{ name: '/dice', value: '_Throw a dice_'},
+		{ name: '/iq (or /iqmeter)', value: `get your IQ.`},
 	)
 	.setImage('https://cdn.discordapp.com/attachments/773879672676548609/773880694296281098/images.jpg')
 	.setTimestamp()
