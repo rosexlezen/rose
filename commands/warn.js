@@ -33,7 +33,7 @@ module.exports.run = async(client, message, args) => {
     .setColor('#d105ff')
 	.setTitle('Warned User!')
 	.setDescription('Warn information:')
-	.setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/773880508743680000/aiudha.jpg')
+	.setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/773928084382154752/403-4036502_alarm-clipart-tornado-siren-warning-icon-png-download.png')
     .addFields(
         {name: `Warned By:`, value: `${message.author}`},
         {name: `User Warned:`, value: `${warnUser} (${warnUser.id})`},
