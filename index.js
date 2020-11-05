@@ -1,7 +1,8 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
 const fs = require("fs"); 
-let fetch = require('node-fetch');
+let fetch = require('node-fetch'); // idek if i'm using this
+const client = new Client({partials: ['MESSAGE'] });
 
 const client = new discord.Client();
 client.commands = new discord.Collection();
@@ -50,23 +51,38 @@ client.on("message", async message =>{
 //
 //
 
-    client.on("messageDelete", messageDeleted => {
+    // client.on("messageDelete", messageDeleted => {
 
-    if(messageDeleted.author.bot) return;
-    var content = messageDeleted.content;
-       if(!content) content = "<Empty Message>";
+    // if(messageDeleted.author.bot) return;
+    // var content = messageDeleted.content;
+    // if(!content) content = "<Empty Message>";
 
-    var response = `**Message ID:** ${messageDeleted.id}\n**Message Author:** ${message.author}\n**Channel:** ${messageDeleted.channel}\n**Message:** ${content}`;
+    // var response = `**Message ID:** ${messageDeleted.id}\n**Message Author:** ${message.author}\n**Channel:** ${messageDeleted.channel}\n**Message:** ${content}`;
+    // var embedMsg = new discord.MessageEmbed()
+    // .setAuthor(`${messageDeleted.author.tag} ( ${messageDeleted.author.id} )`, `${messageDeleted.author.avatarURL({ size:4096 })}`)
+    // .setDescription(response)
+    // .setTimestamp()
+    // .setColor("#d105ff");
 
-    var embedMsg = new discord.MessageEmbed()
-    .setAuthor(`${messageDeleted.author.tag} ( ${messageDeleted.author.id} )`, `${messageDeleted.author.avatarURL({ size:4096 })}`)
-    .setDescription(response)
-    .setTimestamp()
-    .setColor("#d105ff");
+    // var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
+    // if(!channel) return;
+    // channel.send(embedMsg);
+    // });
 
-    var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
-    if(!channel) return;
-    channel.send(embedMsg);
+
+    client.on("messageDelete", message =>{
+        if(!message.partials) {
+            const channel = client.channels.cache.find(c => c.name === 'logs');
+            if (channel) {
+
+            var response = `**Message ID:** ${messageDeleted.id}\n**Message Author:** ${message.author}\n**Channel:** ${messageDeleted.channel}\n**Message:** ${content}`;
+            var embedMsg = new discord.MessageEmbed()
+            .setAuthor(`${messageDeleted.author.tag} ( ${messageDeleted.author.id} )`, `${messageDeleted.author.avatarURL({ size:4096 })}`)
+            .setDescription(response)
+            .setTimestamp()
+            .setColor("#d105ff");
+            }
+        }
     });
 
 });
