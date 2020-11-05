@@ -46,7 +46,7 @@ module.exports.run = async(client, message, args) => {
         {name: `Total Warns:`, value: warns[warnUser.id].warns},
         )
 	.setTimestamp()
-    .setFooter(`Executed by: ${message.author.tag}`,'https://cdn.discordapp.com/attachments/773879672676548609/773880029859020820/awdaw.jpg');
+    .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
     
     var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
     if(!channel) return message.channel.send(warnEmbed) && message.channel.send('``please create a "logs" channel so warn will display there.``');
