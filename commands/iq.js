@@ -8,6 +8,5 @@ module.exports.run = async(client, message, args) => {
 } 
 
 module.exports.help = {
-    name: "iq",
-    name: "iqmeter"
+    name: "iq" || "iqmeter"
 }
