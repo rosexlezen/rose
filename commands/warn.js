@@ -29,6 +29,11 @@ module.exports.run = async(client, message, args) => {
     warns[warnUser.id].warns++;
     warns[warnUser.id].name = message.author.tag; 
 
+    fs.writeFile("./data/warnings.json", JSON.stringify(warns), (err) =>{
+        if (err) console.log(err);
+    });
+
+    message.channel.send("WARNING! This feature is still in maintenance!")
     var warnEmbed = new discord.MessageEmbed()
     .setColor('#d105ff')
 	.setTitle('Warned User!')
@@ -44,13 +49,9 @@ module.exports.run = async(client, message, args) => {
     .setFooter('creator: Lezen#3283', 'https://cdn.discordapp.com/attachments/773879672676548609/773880029859020820/awdaw.jpg');
     
     var channel = message.member.guild.channels.cache.find(c => c.name === 'logs');
-    if(!channel) return message.channel.send('``please create a "logs" channel to see warn messages.``') && message.channel.send(warnEmbed);
+    if(!channel) return message.channel.send(warnEmbed) && message.channel.send('``please create a "logs" channel so warn will display there.``');
     channel.send(warnEmbed);
 
-    fs.writeFile("./data/warnings.json", JSON.stringify(warns), (err) =>{
-        if (err) console.log(err);
-    });
-    
 } 
 
 module.exports.help = {
