@@ -12,7 +12,7 @@ module.exports.run = async(client, message, args) => {
 
     var suggestEmbed = new discord.MessageEmbed()
     .setColor('#d105ff')
-	.setTitle('Suggestion information:')
+	.setDescription('Suggestion information:')
 	.setThumbnail(message.author.avatarURL())
     .addFields(
         {name: `Suggested by:`, value: `${message.author}`},
