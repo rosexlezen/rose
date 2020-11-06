@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async(client, message, args) => {
 
     // Permissions
-    if (!args[0]) return message.reply("please specify your suggestion.");
+    if (!args[0]) return message.reply("please write your suggestion.");
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("I cannot execute this command! Please give me ``Manage Messages``");
 
     var suggestion = args.slice(1).join(" ");
@@ -17,7 +17,6 @@ module.exports.run = async(client, message, args) => {
     .addFields(
         {name: `Suggested by:`, value: `${message.author}`},
         {name: `Suggestion:`, value: `${suggestion}`},
-        {name: `Total Warns (THIS DOES NOT WORK):`, value: warns[warnUser.id].warns},
         )
 	.setTimestamp()
     .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
