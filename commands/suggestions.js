@@ -15,8 +15,8 @@ module.exports.run = async(client, message, args) => {
 	.setTitle('Suggestion information:')
 	.setThumbnail(message.author.avatarURL())
     .addFields(
-        {name: `${message.author}'s suggestion`, value: `Suggestion:`},
-        {name: `${suggestion}`},
+        {name: `Suggested by:`, value: `${message.author}`},
+        {name: `Suggestion:`, value: `${suggestion}`},
         )
 	.setTimestamp()
     .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
