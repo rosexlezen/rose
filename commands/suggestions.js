@@ -6,13 +6,13 @@ module.exports.run = async(client, message, args) => {
     if (!args[0]) return message.reply("please write your suggestion.");
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("I cannot execute this command! Please give me ``Manage Messages``");
 
-    var suggestion = args.slice(1).join(" ");
+    var suggestion = args.slice(0).join(" ");
 
     // Command
 
     var suggestEmbed = new discord.MessageEmbed()
     .setColor('#d105ff')
-	.setTitle('Suggestion information:')
+	.setTitle(message.author, "suggested:")
 	.setThumbnail(message.author.avatarURL())
     .addFields(
         {name: `Suggested by:`, value: `${message.author}`},
