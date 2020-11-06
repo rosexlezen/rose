@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 const Hypixel = require('hypixel');
 
-module.exports.run = async(client, message, args) => {
+module.exports.run = async(message, args) => {
 
     const client = new Hypixel({ key: 'ddb38afa-e06e-454a-9458-303a2bf53839' });
 
