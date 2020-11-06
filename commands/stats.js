@@ -16,7 +16,7 @@ module.exports.run = async(client, message, args) => {
 	    .setThumbnail(`https://cdn.discordapp.com/attachments/773879672676548609/774244292713512990/AATXAJwDxeYJZqn6lKdo1rMjgn1Jv9bGy4GPzQDlFyIawAs900-c-k-c0x00ffffff-no-rj.png`)
         .addFields(
         {name: `Player:`, value: `${record.displayname}`},
-        {name: `Statistics:`, value: `:sparkles: Network Experience: ${record.getRank()} ${record.networkExp} ${record.playerlevel}`},
+        {name: `Statistics:`, value: `:sparkles: Network Experience: ${record.networkExp} ${record.playerlevel}`},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
