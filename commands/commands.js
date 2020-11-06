@@ -24,7 +24,6 @@ module.exports.run = async(client, message, args) => {
 		{ name: '/iq (or /iqmeter)', value: `get your IQ.` },
 		{ name: '/coin', value: `does a coinflip` },
 		{ name: '/rps (rock, paper or scissors)', value: `play rock paper scissors with the bot.` },
-		{ name: '/calc', value: `Calculates everything for you.` },
 	)
 	.setImage('https://cdn.discordapp.com/attachments/773879672676548609/773880694296281098/images.jpg')
 	.setTimestamp()
