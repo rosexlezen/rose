@@ -15,7 +15,7 @@ module.exports.run = async(client, message, args) => {
         //
         //
 
-        var networkLevel = (Math.sqrt(networkExp + 15312.5) - 125/Math.sqrt(2))/(25*Math.sqrt(2));
+        var networkLevel = (Math.sqrt(record.networkExp + 15312.5) - 125/Math.sqrt(2))/(25*Math.sqrt(2));
 
         var GeneralEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
