@@ -3,13 +3,15 @@ let fetch = require('node-fetch');
 
 module.exports.run = async(client, message, args) => {
 
-    message.channel.send("hey", {files: ["https://cdn.discordapp.com/attachments/773879672676548609/774542590925733898/2020-11-04_14.19.15.png?size=2048"]});
-
     // Getting the API
     if(!args[0]) return message.reply('please provide a username.');
     fetch(`https://api.plancke.io/hypixel/v1/player?player=${args[0]}`)
     .then(res => res.json()) 
     .then(( { record } ) => {
+
+        
+    var space = message.content.split(" ");
+    var alts = client.commands.get(space.slice(record.knownAliases));
 
         // Embed
         var statsEmbed = new discord.MessageEmbed()
@@ -19,7 +21,7 @@ module.exports.run = async(client, message, args) => {
         .addFields(
         {name: `Player:`, value: `${record.displayname}`},
         {name: `Statistics:`, value: `:sparkles: Network Experience: ${record.networkExp}`},
-        {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${record.knownAliases}`},
+        {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${alts}`},
         {name: `SkyWars:`, value: `:sparkles: Wins: ${record.stats.SkyWars.wins} (Should be 34)`},
         {name: `Skywars:`, value: `:sparkles: Kills: ${record.stats.SkyWars.kills}`},
         {name: `Skywars:`, value: `:sparkles: Winstreak: ${record.stats.SkyWars.win_streak}`},
@@ -29,7 +31,7 @@ module.exports.run = async(client, message, args) => {
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
 
         // Sending stats
-        return message.channel.send(statsEmbed), {files: ["https://cdn.discordapp.com/attachments/773879672676548609/774542590925733898/2020-11-04_14.19.15.png?size=2048"]};
+        return message.channel.send(statsEmbed);
         })
     .catch(err => console.log(err));
     }
