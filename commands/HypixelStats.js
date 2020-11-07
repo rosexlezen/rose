@@ -38,23 +38,39 @@ module.exports.run = async(client, message, args) => {
         //
         //
 
+        // Solo Normal
+        var SkywarsSoloNormalKDR = record.stats.SkyWars.kills_solo_normal / record.stats.SkyWars.deaths_solo_normal;
+        var SkywarsSoloNormalLDR = record.stats.SkyWars.wins_solo_normal / record.stats.SkyWars.losses_solo_normal;
+
+        // Solo Insane Kills
+        var SkywarsSoloInsaneKills = record.stats.SkyWars.kills_normal - record.stats.SkyWars.kills_solo_normal;
+        var SkywarsSoloInsaneKDR = SkywarsSoloInsaneKills / record.stats.SkyWars.deaths_normal;
+
+        // Solo Insane Wins
+        var SkywarsSoloInsaneWins = record.stats.SkyWars.wins_normal - record.stats.SkyWars.wins_solo_normal;
+        var SkywarsSoloInsaneLDR = SkywarsSoloInsaneWins / record.stats.SkyWars.losses_normal;
+
+        // Duo's Normal
+        var SkywarsDuoNormalKDR = record.stats.SkyWars.kills_normal / record.stats.SkyWars.deaths_normal;
+        var SkywarsDuoNormalLDR = record.stats.SkyWars.wins_normal / record.stats.SkyWars.losses_normal;
+
         var SkyWarsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
         .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774682965589884998/Skywars-64.png')
 	    .setDescription("⏪ = General ⏩ = Bedwars")
         .addFields(
         { name: `Player:`, value: `${record._custom.names.stripped.name}` },
-        { name: '\u200B', value: '\u200B' },
-        { name: `Normal Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins} \nInsane Wins: ${record.stats.SkyWars.wins}` },
-        { name: `Insane Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
+        { name: 'Extra Information:', value: `Winstreak: ${record.stats.SkyWars.win_streak}\n Souls: ${record.stats.SkyWars.souls}` },
+        { name: `Normal Solo:`, value: `Wins: ${record.stats.SkyWars.wins_solo_normal} \nWLR: ${SkywarsSoloNormalLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_solo_normal}\nKDR: ${SkywarsSoloNormalKDR.toFixed(2)}` },
+        { name: `Insane Solo:`, value: `Wins: ${record.stats.SkyWars.wins_normal} \nWLR: ${SkywarsSoloInsaneLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_normal}\nKDR: ${SkywarsSoloInsaneKDR.toFixed(2)}`, inline: true },
         )
         .addFields(
-        { name: `Normal Duo's:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}` },
-        { name: `Insane Duo's:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
+        { name: `Normal Duo's:`, value: `Coming soon` },
+        { name: `Insane Duo's:`, value: `Coming soon`, inline: true },
         )
         .addFields(
-        { name: `Ranked:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}` },
-        { name: `MEGA:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
+        { name: `Ranked:`, value: `Coming soon` },
+        { name: `MEGA:`, value: `Coming soon`, inline: true },
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
