@@ -41,13 +41,18 @@ module.exports.run = async(client, message, args) => {
         .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774682965589884998/Skywars-64.png')
 	    .setDescription("⏪ = General ⏩ = Bedwars")
         .addFields(
-        {name: `Player:`, value: `${record._custom.names.stripped.name}`},
-        {name: `Normal Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`},
-        {name: `Insane Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
-        {name: `Normal Duo's:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`},
-        {name: `Insane Duo's:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
-        {name: `Ranked:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`},
-        {name: `MEGA:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
+        { name: `Player:`, value: `${record._custom.names.stripped.name}` },
+        { name: '\u200B', value: '\u200B' },
+        { name: `Normal Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}` },
+        { name: `Insane Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
+        )
+        .addFields(
+        { name: `Normal Duo's:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}` },
+        { name: `Insane Duo's:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
+        )
+        .addFields(
+        { name: `Ranked:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}` },
+        { name: `MEGA:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);

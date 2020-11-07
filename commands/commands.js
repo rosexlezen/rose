@@ -19,10 +19,10 @@ module.exports.run = async(client, message, args) => {
 	.addFields(
 		{ name: '/ping', value: `_Get the bots' ping_`, inline: true },
 		{ name: '/hs', value: `_Looks for someone's Hypixel stats._`, inline: true },
-		{ name: '/dice', value: '_Throw a dice_' },
-		{ name: '/iq (or /iqmeter)', value: `get your IQ.` },
-		{ name: '/coin', value: `does a coinflip` },
-		{ name: '/rps (rock, paper or scissors)', value: `play rock paper scissors with the bot.` },
+		{ name: '/dice', value: '_Throw a dice_', inline: true },
+		{ name: '/iq (or /iqmeter)', value: `get your IQ.`,  inline: true },
+		{ name: '/coin', value: `does a coinflip`,  inline: true },
+		{ name: '/rps (rock, paper or scissors)', value: `play rock paper scissors with the bot.`,  inline: true },
 	)
 	.setImage('https://cdn.discordapp.com/attachments/773879672676548609/773880694296281098/images.jpg')
 	.setTimestamp()
