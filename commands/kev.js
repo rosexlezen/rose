@@ -17,6 +17,7 @@ module.exports.run = async(client, message, args) => {
 
         var GeneralEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
+        .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774244292713512990/AATXAJwDxeYJZqn6lKdo1rMjgn1Jv9bGy4GPzQDlFyIawAs900-c-k-c0x00ffffff-no-rj.png')
 	    .setDescription('Statistics information:')
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
@@ -37,6 +38,7 @@ module.exports.run = async(client, message, args) => {
 
         var SkyWarsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
+        .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774682965589884998/Skywars-64.png')
 	    .setDescription('Statistics information:')
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
@@ -53,6 +55,7 @@ module.exports.run = async(client, message, args) => {
 
         var BedWarsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
+        .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774682819947135024/BedWars-64.png')
 	    .setDescription('Statistics information:')
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
@@ -100,6 +103,7 @@ module.exports.run = async(client, message, args) => {
                             }
                     });
                 }
+
 
                 if (emoji === "⏩") {
                     message.channel.send("Coming Soon!").then(async msg => {
