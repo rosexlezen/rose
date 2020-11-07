@@ -19,10 +19,10 @@ module.exports.run = async(client, message, args) => {
         {name: `Player:`, value: `${record.displayname}`},
         {name: `Statistics:`, value: `:sparkles: Network Experience: ${record.networkExp}`},
         {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${record.knownAliases}`},
-        {name: `SkyWars:`, value: `:sparkles: Wins: ${SkyWars.wins} (Should be 34)`},
-        {name: `Skywars:`, value: `:sparkles: Kills: ${SkyWars.kills}`},
-        {name: `Skywars:`, value: `:sparkles: Winstreak: ${SkyWars.win_streak}`},
-        {name: `Bedwars:`, value: `:sparkles: Winstreak: ${Bedwars.eight_two_voidless_wins_bedwars}`},
+        {name: `SkyWars:`, value: `:sparkles: Wins: ${record.stats.SkyWars.wins} (Should be 34)`},
+        {name: `Skywars:`, value: `:sparkles: Kills: ${record.stats.SkyWars.kills}`},
+        {name: `Skywars:`, value: `:sparkles: Winstreak: ${record.stats.SkyWars.win_streak}`},
+        {name: `Bedwars:`, value: `:sparkles: Winstreak: ${record.stats.Bedwars.eight_two_voidless_wins_bedwars}`},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
