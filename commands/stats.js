@@ -11,14 +11,6 @@ module.exports.run = async(client, message, args) => {
 
         //
         //
-        // Variables
-        //
-        //
-
-        var KDR = record.stats.skywars.wins / record.stats.skywars.losses;
-
-        //
-        //
         // General Stats
         //
         //
@@ -55,7 +47,7 @@ module.exports.run = async(client, message, args) => {
         fetch(`https://api.plancke.io/hypixel/v1/player?player=${args[0]}`)
         .then(res => res.json()) 
         .then(( { record } ) => {
-            
+
         if(args[1] == "Skywars" || args[1] == "sw") {
 
         // Embed
