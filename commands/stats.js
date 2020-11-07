@@ -9,8 +9,6 @@ module.exports.run = async(client, message, args) => {
     .then(res => res.json()) 
     .then(( { record } ) => {
 
-        if (!args[1]) {
-
         //
         //
         // General Stats
@@ -35,9 +33,9 @@ module.exports.run = async(client, message, args) => {
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
 
         // Sending stats
-        return message.channel.send(statsEmbed);
-    }
+        message.channel.send(statsEmbed);
 
+        
     //
     //
     // SkyWars
@@ -66,8 +64,7 @@ module.exports.run = async(client, message, args) => {
         message.reply("Can't go forward yet.")
     }
 
-})
-        
+})      
     .catch(err => console.log(err));
     }
 
