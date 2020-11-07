@@ -7,7 +7,7 @@ module.exports.run = async(client, message, args) => {
     if(!args[0]) return message.reply('please provide a username.');
     fetch(`https://api.plancke.io/hypixel/v1/player?player=${args[0]}`)
     .then(res => res.json()) 
-    .then(async ({ record }) => {
+    .then( ({ record }) => {
 
         //
         //
@@ -33,9 +33,8 @@ module.exports.run = async(client, message, args) => {
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
 
         // Sending stats
-        message.channel.send(statsEmbed);
+        message.channel.send(statsEmbed).then(async msg => {
 
-        
     //
     //
     // SkyWars
@@ -49,20 +48,20 @@ module.exports.run = async(client, message, args) => {
     } else if (emoji === "⏩") {
         message.reply("Can't go forward yet.")
     }
-
+}
     //
     //
     // BedWars
     //
     //
 
-    var emoji = await reactionMessage(msg, message.author, ["⏪", "⏩"]);
+    // var emoji = await reactionMessage(msg, message.author, ["⏪", "⏩"]);
 
-    if (emoji === "⏪") {
-        message.reply("Can't go back yet.")
-    } else if (emoji === "⏩") {
-        message.reply("Can't go forward yet.")
-    }
+    // if (emoji === "⏪") {
+    //     message.reply("Can't go back yet.")
+    // } else if (emoji === "⏩") {
+    //     message.reply("Can't go forward yet.")
+    // }
 
 })      
     .catch(err => console.log(err));
