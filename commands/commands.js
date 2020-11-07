@@ -13,13 +13,12 @@ module.exports.run = async(client, message, args) => {
 		{ name: 'This message will automatically be deleted in 30 seconds!', value: 'These are all the commands:' },
         { name: '\u200B', value: '\u200B' },
         { name: '/help', value: '_Get help to use the bot!_', inline: true },
-        { name: '/commands', value: '_Find all the commands you can use!_', inline: true },
 		{ name: '/info', value: '_Find all the informatino about the bot!_', inline: true },
 		{ name: '/suggest', value: '_Make a suggestion_', inline: true },
 	)
 	.addFields(
 		{ name: '/ping', value: `_Get the bots' ping_`, inline: true },
-		{ name: '/uptime', value: '_Get the time the bot has been up and running_', inline: true },
+		{ name: '/hs', value: `_Looks for someone's Hypixel stats._`, inline: true },
 		{ name: '/dice', value: '_Throw a dice_' },
 		{ name: '/iq (or /iqmeter)', value: `get your IQ.` },
 		{ name: '/coin', value: `does a coinflip` },

@@ -18,7 +18,7 @@ module.exports.run = async(client, message, args) => {
         var GeneralEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
         .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774244292713512990/AATXAJwDxeYJZqn6lKdo1rMjgn1Jv9bGy4GPzQDlFyIawAs900-c-k-c0x00ffffff-no-rj.png')
-	    .setDescription('Statistics information:')
+	    .setDescription("⏩ = SkyWars")
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
         {name: `UUID:`, value: `:bust_in_silhouette: UUID: ${record.uuid}`},
@@ -39,10 +39,15 @@ module.exports.run = async(client, message, args) => {
         var SkyWarsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
         .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774682965589884998/Skywars-64.png')
-	    .setDescription('Statistics information:')
+	    .setDescription("⏪ = General ⏩ = Bedwars")
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
-        {name: `SkyWars:`, value: `:sparkles: Wins: ${record.stats.SkyWars.wins}`},
+        {name: `Normal Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`},
+        {name: `Insane Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
+        {name: `Normal Duo's:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`},
+        {name: `Insane Duo's:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
+        {name: `Ranked:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`},
+        {name: `MEGA:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
@@ -56,7 +61,7 @@ module.exports.run = async(client, message, args) => {
         var BedWarsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
         .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774682819947135024/BedWars-64.png')
-	    .setDescription('Statistics information:')
+	    .setDescription("⏪ = Skywars ⏩ = N/A")
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
         {name: `Testing:`, value: `Bedwars`},
@@ -95,7 +100,7 @@ module.exports.run = async(client, message, args) => {
                         message.channel.send(SkyWarsEmbed).then(async msg => {
                             var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
                             if (emoji === "⏪") {
-                                message.channel.send(SkyWarsEmbed);
+                                message.channel.send(GeneralEmbed);
                             }
 
                             if (emoji === "⏩") {
@@ -147,5 +152,5 @@ async function reactionMessage(message, author, time, reactions) {
 
 }
 module.exports.help = {
-    name: "kev"
+    name: "hs"
 }
