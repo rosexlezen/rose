@@ -48,7 +48,8 @@ module.exports.run = async(client, message, args) => {
     } else if (emoji === "⏩") {
         message.reply("Can't go forward yet.")
     }
-}
+});
+    
     //
     //
     // BedWars
