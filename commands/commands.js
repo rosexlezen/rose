@@ -16,6 +16,7 @@ module.exports.run = async(client, message, args) => {
         { name: '/commands', value: '_Find all the commands you can use!_', inline: true },
 		{ name: '/info', value: '_Find all the informatino about the bot!_', inline: true },
 		{ name: '/suggest', value: '_Make a suggestion_', inline: true },
+		{ name: '/hypixel', value: '_Get information for Hypixel stats._', inline: true },
 	)
 	.addFields(
 		{ name: '/ping', value: `_Get the bots' ping_`, inline: true },

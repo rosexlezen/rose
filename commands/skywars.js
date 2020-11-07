@@ -9,6 +9,10 @@ module.exports.run = async(client, message, args) => {
     .then(res => res.json()) 
     .then(( { record } ) => {
 
+        var KDR = record.stats.skywars.wins / record.stats.skywars.losses;
+
+        if(args[0]) {
+
         // Embed
         var statsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
@@ -16,21 +20,30 @@ module.exports.run = async(client, message, args) => {
         //.setThumbnail("https://cdn.discordapp.com/attachments/773879672676548609/774542590925733898/2020-11-04_14.19.15.png?size=2048")
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
-        {name: `UUID:`, value: `:bust_in_silhouette: UUID: ${record.uuid}`},
-        {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${record.knownAliases}`},
-        {name: `Network Level:`, value: `:sparkles: Network Experience: ${record.networkExp}`},
-        {name: `Achievement:`, value: `:trophy: Achievement Points: ${record.achievementPoints}`},
-        {name: `Karma:`, value: `:fleur_de_lis: Karma: ${record.karma}`},
-        //{name: `SkyWars:`, value: `:sparkles: Wins: ${record.stats.SkyWars.wins}`},
+
+        {name: `Games:`, value: `**Games Played:** ${record.stats.skywars.games_played_skywars}`},
+        {name: `Money:`, value: `**Coins:** ${record.stats.skywars.coins}`},
+        {name: `Winstreak:`, value: `**Current Winstreak:** ${record.stats.skywars.win_streak}`},
+        {name: `Wins:`, value: `**Wins:** ${record.stats.skywars.wins}`},
+        {name: `KDR:`, value: `**KDR:** ${KDR}`},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
 
-        // Sending stats
+        // Sending Embed
         return message.channel.send(statsEmbed);
+
+
+    } else if (args[1]) {
+        message.channel.send(args[1]);
+    } else if (args[1] == "duo") {
+        message.channel.send("test");
+    }
+
         })
     .catch(err => console.log(err));
     }
+
 
 module.exports.help = {
     name: "hs",
