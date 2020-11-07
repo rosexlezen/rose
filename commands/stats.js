@@ -17,6 +17,11 @@ module.exports.run = async(client, message, args) => {
         .addFields(
         {name: `Player:`, value: `${record.displayname}`},
         {name: `Statistics:`, value: `:sparkles: Network Experience: ${record.networkExp}`},
+        {name: `Alts:`, value: `:sparkles: Known Alts: ${record.knownAliases}`},
+        {name: `SkyWars:`, value: `:sparkles: Wins: ${record.wins} (Should be 34)`},
+        {name: `Skywars:`, value: `:sparkles: Kills: ${record.kills}`},
+        {name: `Skywars:`, value: `:sparkles: Winstreak: ${record.win_streak}`},
+        {name: `Bedwars:`, value: `:sparkles: Winstreak: ${record.eight_two_voidless_wins_bedwars}`},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
