@@ -50,7 +50,8 @@ module.exports.run = async(client, message, args) => {
         .then(res => res.json()) 
         .then(( { record } ) => { 
 
-        if(args[1] == "Skywars" || args[1] == "sw") {
+        //if(args[1] == "Skywars" || args[1] == "sw") {
+            if(args[1]) {
 
         // Embed
         var skywarsEmbed = new discord.MessageEmbed()
@@ -71,13 +72,7 @@ module.exports.run = async(client, message, args) => {
 
         // Sending Embed
         return message.channel.send(skywarsEmbed);
-
-
-    } else if (args[2]) {
-        message.channel.send(args[2]);
-    } else if (args[2] == "duo") {
-        message.channel.send("duo works!");
-    }
+    } 
 
 })
         
