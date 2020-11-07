@@ -15,7 +15,7 @@ module.exports.run = async(client, message, args) => {
         //
         //
 
-        var networkLevel = (Math.sqrt(record.networkExp + 15312.5) - 125/Math.sqrt(2))/(25*Math.sqrt(2)).toFixed(2);
+        var networkLevel = (Math.sqrt(record.networkExp + 15312.5) - 125/Math.sqrt(2))/(25*Math.sqrt(2));
 
         var GeneralEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
@@ -25,7 +25,7 @@ module.exports.run = async(client, message, args) => {
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
         {name: `UUID:`, value: `:bust_in_silhouette: UUID: ${record.uuid}`},
         {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${record.knownAliases} https://nl.namemc.com/profile/${args[0]}`},
-        {name: `Network Experience:`, value: `:sparkles: Network Level: ${networkLevel} ( ${record.networkExp} )`},
+        {name: `Network Experience:`, value: `:sparkles: Network Level: ${networkLevel.toFixed(2)} ( ${record.networkExp} )`},
         {name: `Achievement:`, value: `:trophy: Achievement Points: ${record.achievementPoints}`},
         {name: `Karma:`, value: `:fleur_de_lis: Karma: ${record.karma}`},
         )
