@@ -41,14 +41,17 @@ module.exports.run = async(client, message, args) => {
     //
     //
 
-    var emoji = await reactionMessage(msg, message.author, ["⏪", "⏩"]);
+    message.channel.send("a");
+    var emoji = await reactionMessage(msg, ["⏪", "⏩"]);
 
     if (emoji === "⏪") {
         message.reply("Can't go back yet.")
     } else if (emoji === "⏩") {
         message.reply("Can't go forward yet.")
     }
-});
+})
+.catch(err => console.log(err));
+    
     
     //
     //
