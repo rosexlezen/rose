@@ -43,11 +43,11 @@ module.exports.run = async(client, message, args) => {
         var SkywarsSoloNormalLDR = record.stats.SkyWars.wins_solo_normal / record.stats.SkyWars.losses_solo_normal;
 
         // Solo Insane Kills
-        var SkywarsSoloInsaneKills = record.stats.SkyWars.kills_solo - record.stats.SkyWars.kills_solo_normal;
+        var SkywarsSoloInsaneKills = record.stats.SkyWars.kills_solo_normal - record.stats.SkyWars.kills_solo;
         var SkywarsSoloInsaneKDR = SkywarsSoloInsaneKills / record.stats.SkyWars.deaths_normal;
 
         // Solo Insane Wins
-        var SkywarsSoloInsaneWins = record.stats.SkyWars.wins_solo - record.stats.SkyWars.wins_solo_normal;
+        var SkywarsSoloInsaneWins = record.stats.SkyWars.wins_solo_normal - record.stats.SkyWars.wins_solo;
         var SkywarsSoloInsaneLDR = SkywarsSoloInsaneWins / record.stats.SkyWars.losses_normal;
 
         // Duo's Normal
