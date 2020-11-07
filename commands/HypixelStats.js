@@ -69,7 +69,7 @@ module.exports.run = async(client, message, args) => {
         { name: `Insane Duo's:`, value: `Coming soon`, inline: true },
         )
         .addFields(
-        { name: `Ranked:`, value: `Wins: ${record.stats.SkyWars.wins_ranked} \nWLR: ${RankedLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_ranked}\nKDR: ${RankedKDR.toFixed(2)}\nCurrent Kit: ${activeKit_RANKED}` },
+        { name: `Ranked:`, value: `Wins: ${record.stats.SkyWars.wins_ranked} \nWLR: ${RankedLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_ranked}\nKDR: ${RankedKDR.toFixed(2)}\nCurrent Kit: ${record.stats.SkyWars.activeKit_RANKED}` },
         { name: `MEGA:`, value: `Coming soon`, inline: true },
         )
 	    .setTimestamp()
