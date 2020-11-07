@@ -10,7 +10,7 @@ module.exports.run = async(client, message, args) => {
 	.setDescription('Get more commands by typing /commands')
 	.setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/773880508743680000/aiudha.jpg')
 	.addFields(
-		{ name: 'To get a specific gamemode type it after the gamemode itself!', value: `Example: /hs Lezen Bedwars 3's` },
+		{ name: 'To get a specific gamemode type it after the gamemode itself!', value: `Example: /stats Lezen Bedwars 3's` },
         { name: '\u200B', value: '\u200B' },
         { name: '/hs', value: '_Get general information about someone._', inline: true },
 

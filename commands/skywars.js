@@ -11,7 +11,7 @@ module.exports.run = async(client, message, args) => {
 
         var KDR = record.stats.skywars.wins / record.stats.skywars.losses;
 
-        if(args[0]) {
+        if(args[1] == "Skywars" || args[1] == "sw") {
 
         // Embed
         var statsEmbed = new discord.MessageEmbed()
@@ -34,10 +34,10 @@ module.exports.run = async(client, message, args) => {
         return message.channel.send(statsEmbed);
 
 
-    } else if (args[1]) {
-        message.channel.send(args[1]);
-    } else if (args[1] == "duo") {
-        message.channel.send("test");
+    } else if (args[2]) {
+        message.channel.send(args[2]);
+    } else if (args[2] == "duo") {
+        message.channel.send("duo works!");
     }
 
         })
@@ -46,5 +46,5 @@ module.exports.run = async(client, message, args) => {
 
 
 module.exports.help = {
-    name: "hs sw",
+    name: "hs",
 }
