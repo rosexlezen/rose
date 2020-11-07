@@ -50,9 +50,9 @@ module.exports.run = async(client, message, args) => {
         var SkywarsSoloInsaneWins = record.stats.SkyWars.wins_solo - record.stats.SkyWars.wins_solo_normal;
         var SkywarsSoloInsaneLDR = SkywarsSoloInsaneWins / record.stats.SkyWars.losses_solo;
 
-        // Duo's Normal
-        //var SkywarsDuoNormalKDR = record.stats.SkyWars.kills_normal / record.stats.SkyWars.deaths_normal;
-        //var SkywarsDuoNormalLDR = record.stats.SkyWars.wins_normal / record.stats.SkyWars.losses_normal;
+        // Ranked
+        var RankedKDR = record.stats.SkyWars.kills_ranked / record.stats.SkyWars.deaths_ranked;
+        var RankedLDR = record.stats.SkyWars.wins_ranked / record.stats.SkyWars.losses_ranked;
 
         var SkyWarsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
@@ -69,7 +69,7 @@ module.exports.run = async(client, message, args) => {
         { name: `Insane Duo's:`, value: `Coming soon`, inline: true },
         )
         .addFields(
-        { name: `Ranked:`, value: `Coming soon` },
+        { name: `Ranked:`, value: `Wins: ${record.stats.SkyWars.wins_ranked} \nWLR: ${RankedLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_ranked}\nKDR: ${RankedKDR.toFixed(2)}\nCurrent Kit: ${activeKit_RANKED}` },
         { name: `MEGA:`, value: `Coming soon`, inline: true },
         )
 	    .setTimestamp()
