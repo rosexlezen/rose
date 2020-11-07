@@ -9,6 +9,8 @@ module.exports.run = async(client, message, args) => {
     .then(res => res.json()) 
     .then(( { record } ) => {
 
+        if (!args[1]) {
+
         //
         //
         // General Stats
@@ -35,18 +37,18 @@ module.exports.run = async(client, message, args) => {
 
         // Sending stats
         return message.channel.send(statsEmbed);
-
+    }
     })
   
         //
         //
         // Skywars Stats
-        //
+        // /hs name (0) gamemode (1) mode (2)
         //
         
         fetch(`https://api.plancke.io/hypixel/v1/player?player=${args[0]}`)
         .then(res => res.json()) 
-        .then(( { record } ) => {
+        .then(( { record } ) => { 
 
         if(args[1] == "Skywars" || args[1] == "sw") {
 
@@ -83,5 +85,5 @@ module.exports.run = async(client, message, args) => {
     }
 
 module.exports.help = {
-    name: "stats",
+    name: "hs",
 }
