@@ -9,23 +9,19 @@ module.exports.run = async(client, message, args) => {
     .then(res => res.json()) 
     .then(( { record } ) => {
 
-        
-    var space = message.content.split(" ");
-    var alts = client.commands.get(space.slice(record.knownAliases));
-
         // Embed
         var statsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
 	    .setDescription('Statistics information:')
         //.setThumbnail("https://cdn.discordapp.com/attachments/773879672676548609/774542590925733898/2020-11-04_14.19.15.png?size=2048")
         .addFields(
-        {name: `Player:`, value: `${record.displayname}`},
+        {name: `Player:`, value: `${_custom.names.stripped.name}`},
+        {name: `UUID:`, value: `:sparkles: UUID: ${record.uuid}`},
+        {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${record.knownAliases}`},
         {name: `Statistics:`, value: `:sparkles: Network Experience: ${record.networkExp}`},
-        {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${alts}`},
-        {name: `SkyWars:`, value: `:sparkles: Wins: ${record.stats.SkyWars.wins} (Should be 34)`},
-        {name: `Skywars:`, value: `:sparkles: Kills: ${record.stats.SkyWars.kills}`},
-        {name: `Skywars:`, value: `:sparkles: Winstreak: ${record.stats.SkyWars.win_streak}`},
-        {name: `Bedwars:`, value: `:sparkles: Winstreak: ${record.stats.Bedwars.eight_two_voidless_wins_bedwars}`},
+        {name: `Achievement:`, value: `:busts_in_silhouette: Achievement Points: ${record.achievementPoints}`},
+        {name: `Karma:`, value: `:busts_in_silhouette: Karma: ${record.karma}`},
+        //{name: `SkyWars:`, value: `:sparkles: Wins: ${record.stats.SkyWars.wins}`},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
