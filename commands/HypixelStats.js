@@ -24,7 +24,7 @@ module.exports.run = async(client, message, args) => {
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
         {name: `UUID:`, value: `:bust_in_silhouette: UUID: ${record.uuid}`},
-        {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${record.knownAliases}`},
+        {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${record.knownAliases} ( https://nl.namemc.com/profile/${args[0]}.999 )`},
         {name: `Network Experience:`, value: `:sparkles: Network Level: ${networkLevel} ( ${record.networkExp} )`},
         {name: `Achievement:`, value: `:trophy: Achievement Points: ${record.achievementPoints}`},
         {name: `Karma:`, value: `:fleur_de_lis: Karma: ${record.karma}`},
