@@ -77,15 +77,43 @@ module.exports.run = async(client, message, args) => {
 
             if (emoji === "⏪") {
                 message.channel.send(GeneralEmbed).then(async msg => {
-                    var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
+                    var emoji = await reactionMessage(msg, message.author, 300, ["⏩"]);
+                    if (emoji === "⏩") {
+                        message.channel.send(SkyWarsEmbed);
+                    }
                 });
             }
         
+
             if (emoji === "⏩") {
                 message.channel.send(BedWarsEmbed).then(async msg => {
                     var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
+                    if (emoji === "⏪") {
+                        message.channel.send(SkyWarsEmbed).then(async msg => {
+                            var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
+                            if (emoji === "⏪") {
+                                message.channel.send(SkyWarsEmbed);
+                            }
+
+                            if (emoji === "⏩") {
+                                message.channel.send(BedWarsEmbed);
+                            }
+                    });
+                }
+
+                if (emoji === "⏩") {
+                    message.channel.send("Coming Soon!").then(async msg => {
+                        var emoji = await reactionMessage(msg, message.author, 300, ["⏪"]);
+                        if (emoji === "⏪") {
+                            message.channel.send(BedWarsEmbed);
+
+                        }
+                    });
+                }
                 });
             }
+
+
         });
     }
 });
