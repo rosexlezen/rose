@@ -15,7 +15,7 @@ module.exports.run = async(client, message, args) => {
 	    .setDescription('Statistics information:')
         //.setThumbnail("https://cdn.discordapp.com/attachments/773879672676548609/774542590925733898/2020-11-04_14.19.15.png?size=2048")
         .addFields(
-        {name: `Player:`, value: `${_custom.names.stripped.name}`},
+        {name: `Player:`, value: `${record._custom.names.stripped.name}`},
         {name: `UUID:`, value: `:sparkles: UUID: ${record.uuid}`},
         {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${record.knownAliases}`},
         {name: `Statistics:`, value: `:sparkles: Network Experience: ${record.networkExp}`},
