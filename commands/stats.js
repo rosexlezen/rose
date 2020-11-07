@@ -17,7 +17,6 @@ module.exports.run = async(client, message, args) => {
         //
         //
 
-
         // Embed
         var statsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
@@ -37,38 +36,35 @@ module.exports.run = async(client, message, args) => {
 
         // Sending stats
         return message.channel.send(statsEmbed);
-        
-    } //else if(args.splice(1).join(' ') == "sw") {
+    }
 
-  
-        //
-        //
-        // Skywars Stats
-        // /hs name (0) gamemode (1) mode (2)
-        // 
+    //
+    //
+    // SkyWars
+    //
+    //
 
-        if(args.splice(2).join(' ') == "sw") {
+    var emoji = await reactionMessage(msg, message.author, ["⏪", "⏩"]);
 
-        // Embed
-        var skywarsEmbed = new discord.MessageEmbed()
-        .setColor('#d105ff')
-	    .setDescription('Statistics information:')
-        //.setThumbnail("https://cdn.discordapp.com/attachments/773879672676548609/774542590925733898/2020-11-04_14.19.15.png?size=2048")
-        .addFields(
-        {name: `Player:`, value: `${record._custom.names.stripped.name}`},
+    if (emoji === "⏪") {
+        message.reply("Can't go back yet.")
+    } else if (emoji === "⏩") {
+        message.reply("Can't go forward yet.")
+    }
 
-        {name: `Games:`, value: `**Games Played:** ${record.stats.skywars.games_played_skywars}`},
-        {name: `Money:`, value: `**Coins:** ${record.stats.skywars.coins}`},
-        {name: `Winstreak:`, value: `**Current Winstreak:** ${record.stats.skywars.win_streak}`},
-        {name: `Wins:`, value: `**Wins:** ${record.stats.skywars.wins}`},
-        {name: `KDR:`, value: `**KDR:** ${KDR}`},
-        )
-	    .setTimestamp()
-        .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
+    //
+    //
+    // BedWars
+    //
+    //
 
-        // Sending Embed
-        return message.channel.send(skywarsEmbed);
-    } 
+    var emoji = await reactionMessage(msg, message.author, ["⏪", "⏩"]);
+
+    if (emoji === "⏪") {
+        message.reply("Can't go back yet.")
+    } else if (emoji === "⏩") {
+        message.reply("Can't go forward yet.")
+    }
 
 })
         
