@@ -45,7 +45,7 @@ module.exports.run = async(client, message, args) => {
         .addFields(
         { name: `Player:`, value: `${record._custom.names.stripped.name}` },
         { name: '\u200B', value: '\u200B' },
-        { name: `Normal Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, value: `Insane Wins: ${record.stats.SkyWars.wins}` },
+        { name: `Normal Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins} \nInsane Wins: ${record.stats.SkyWars.wins}` },
         { name: `Insane Solo:`, value: `:sparkles: Insane Wins: ${record.stats.SkyWars.wins}`, inline: true },
         )
         .addFields(
