@@ -4,8 +4,8 @@
         
         module.exports.run = async(client, message, args) => {
         
-            message.channel.send(`_testing_`);
-                var emoji = await reactionMessage(message, message.author, ["⏪", "⏩"]);
+            message.channel.send(`_testing_`).then(async msg => {
+                var emoji = await reactionMessage(msg, message.author, ["⏪", "⏩"]);
         
                 //
                 // Testing one
@@ -26,8 +26,9 @@
                 } else if (emoji === "⏩") {
                     message.channel.send(`_testing_`);
                 }
-        
+            });
         }      
+        
     
         
         // 
