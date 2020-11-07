@@ -38,7 +38,7 @@ module.exports.run = async(client, message, args) => {
         // Sending stats
         return message.channel.send(statsEmbed);
         
-    } else if(args[1] == "Lezen" || args[1] == "sw") {
+    } //else if(args.splice(1).join(' ') == "sw") {
 
   
         //
@@ -46,6 +46,8 @@ module.exports.run = async(client, message, args) => {
         // Skywars Stats
         // /hs name (0) gamemode (1) mode (2)
         // 
+
+        if(args.splice(1).join(' ') == "sw") {
 
         // Embed
         var skywarsEmbed = new discord.MessageEmbed()
