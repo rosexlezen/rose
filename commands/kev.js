@@ -1,4 +1,6 @@
 const discord = require("discord.js");
+let fetch = require('node-fetch'); 
+
 
 module.exports.run = async(client, message, args) => {
 
