@@ -47,7 +47,7 @@ module.exports.run = async(client, message, args) => {
         // /hs name (0) gamemode (1) mode (2)
         // 
 
-        if(args[1].splice(1).join(' ') == "sw") {
+        if(args.splice(2).join(' ') == "sw") {
 
         // Embed
         var skywarsEmbed = new discord.MessageEmbed()
