@@ -2,8 +2,35 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
 
-message.channel.send(`_Please wait until all emojis have been loaded._`);
-message.channel.send("**―――――――――――――――**\nChoose a question\n**―――――――――――――――**").then(async msg => {
+    if(!args[0]) return message.reply('please provide a username.');
+    fetch(`https://api.plancke.io/hypixel/v1/player?player=${args[0]}`)
+    .then(res => res.json()) 
+    .then( ({ record }) => {
+
+        //
+        //
+        // General Stats
+        //
+        //
+
+        // Embed
+        var myEmbed = new discord.MessageEmbed()
+        .setColor('#d105ff')
+	    .setDescription('Statistics information:')
+        //.setThumbnail("https://cdn.discordapp.com/attachments/773879672676548609/774542590925733898/2020-11-04_14.19.15.png?size=2048")
+        .addFields(
+        {name: `Player:`, value: `${record._custom.names.stripped.name}`},
+        {name: `UUID:`, value: `:bust_in_silhouette: UUID: ${record.uuid}`},
+        {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${record.knownAliases}`},
+        {name: `Network Level:`, value: `:sparkles: Network Experience: ${record.networkExp}`},
+        {name: `Achievement:`, value: `:trophy: Achievement Points: ${record.achievementPoints}`},
+        {name: `Karma:`, value: `:fleur_de_lis: Karma: ${record.karma}`},
+        //{name: `SkyWars:`, value: `:sparkles: Wins: ${record.stats.SkyWars.wins}`},
+        )
+	    .setTimestamp()
+        .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
+
+    message.channel.send(myEmbed).then(async msg => {
     var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
 
     //
@@ -64,6 +91,7 @@ async function reactionMessage(message, author, time, reactions) {
     return message.awaitReactions(filter, {max: 1, time: time}).then(collected => collected.first() && collected.first().emoji.name);
 
 }
+    });
 
 }
 module.exports.help = {
