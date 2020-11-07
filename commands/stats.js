@@ -13,15 +13,16 @@ module.exports.run = async(client, message, args) => {
         var statsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
 	    .setDescription('Statistics information:')
-	    .setThumbnail(`https://cdn.discordapp.com/attachments/773879672676548609/774244292713512990/AATXAJwDxeYJZqn6lKdo1rMjgn1Jv9bGy4GPzQDlFyIawAs900-c-k-c0x00ffffff-no-rj.png`)
+	    .setImage("https://cdn.discordapp.com/attachments/773879672676548609/774542590925733898/2020-11-04_14.19.15.png?size=2048")
+        .setThumbnail("https://cdn.discordapp.com/attachments/773879672676548609/774542590925733898/2020-11-04_14.19.15.png?size=2048")
         .addFields(
         {name: `Player:`, value: `${record.displayname}`},
         {name: `Statistics:`, value: `:sparkles: Network Experience: ${record.networkExp}`},
         {name: `Alts:`, value: `:busts_in_silhouette: Known Alts: ${record.knownAliases}`},
-        {name: `SkyWars:`, value: `:sparkles: Wins: ${record.SkyWars.wins} (Should be 34)`},
-        {name: `Skywars:`, value: `:sparkles: Kills: ${record.SkyWars.kills}`},
-        {name: `Skywars:`, value: `:sparkles: Winstreak: ${record.SkyWars.win_streak}`},
-        {name: `Bedwars:`, value: `:sparkles: Winstreak: ${record.Bedwars.eight_two_voidless_wins_bedwars}`},
+        {name: `SkyWars:`, value: `:sparkles: Wins: ${SkyWars.wins} (Should be 34)`},
+        {name: `Skywars:`, value: `:sparkles: Kills: ${SkyWars.kills}`},
+        {name: `Skywars:`, value: `:sparkles: Winstreak: ${SkyWars.win_streak}`},
+        {name: `Bedwars:`, value: `:sparkles: Winstreak: ${Bedwars.eight_two_voidless_wins_bedwars}`},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
