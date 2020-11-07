@@ -75,18 +75,6 @@ module.exports.run = async(client, message, args) => {
         message.channel.send(SkyWarsEmbed).then(async msg => {
             var emoji = await reactionMessage(msg, message.author, ["⏪", "⏩"]);
 
-            if (emoji === "⏪") {
-                message.channel.send(GeneralEmbed).then(async msg => {
-                    var emoji = await reactionMessage(msg, message.author,["⏪", "⏩"]);
-        
-                });
-            }
-        
-            if (emoji === "⏩") {
-                message.channel.send(BedWarsEmbed).then(async msg => {
-                    var emoji = await reactionMessage(msg, message.author, ["⏪"]);
-                });
-            }
         });
     }
 });
