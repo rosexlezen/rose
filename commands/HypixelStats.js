@@ -66,12 +66,8 @@ module.exports.run = async(client, message, args) => {
         { name: 'Extra Information:', value: `Winstreak: ${record.stats.SkyWars.win_streak}\n Souls: ${record.stats.SkyWars.souls}` },
         { name: `Normal Solo:`, value: `Wins: ${record.stats.SkyWars.wins_solo_normal} \nWLR: ${SkywarsSoloNormalLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_solo_normal}\nKDR: ${SkywarsSoloNormalKDR.toFixed(2)}` },
         { name: `Insane Solo:`, value: `Wins: ${SkywarsSoloInsaneWins} \nWLR: ${SkywarsSoloInsaneLDR.toFixed(2)}\nKills: ${SkywarsSoloInsaneKills}\nKDR: ${SkywarsSoloInsaneKDR.toFixed(2)}`, inline: true },
-        )
-        .addFields(
         { name: `Normal Duo's:`, value: `Coming soon` },
         { name: `Insane Duo's:`, value: `Coming soon`, inline: true },
-        )
-        .addFields(
         { name: `Ranked:`, value: `Wins: ${record.stats.SkyWars.wins_ranked} \nWLR: ${RankedLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_ranked}\nKDR: ${RankedKDR.toFixed(2)}\nCurrent Kit: ${record.stats.SkyWars.activeKit_RANKED}` },
         { name: `MEGA:`, value: `Coming soon`, inline: true },
         )
@@ -91,8 +87,14 @@ module.exports.run = async(client, message, args) => {
         .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774682819947135024/BedWars-64.png')
 	    .setDescription("⏪ = Skywars ⏩ = N/A")
         .addFields(
-        {name: `Player:`, value: `${record._custom.names.stripped.name}`, inline: true},
-        {name: `Extra Information:`, value: `Level: ${bedwarsLevel}⭐ ( ${record.stats.Bedwars.Experience} ) \nWinstreak: ${record.stats.Bedwars.winstreak}`, inline: true},
+        {name: `Player:`, value: `${record._custom.names.stripped.name}`},
+        {name: `Extra Information:`, value: `Level: ${bedwarsLevel}⭐ ( ${record.stats.Bedwars.Experience} ) \nWinstreak: ${record.stats.Bedwars.winstreak}`},
+        {name: `Solo:`, value: `Coming Soon!`},
+        {name: `Duo:`, value: `Coming Soon!`, inline: true},
+        {name: `3's:`, value: `Coming Soon!`},
+        {name: `4's:`, value: `Coming Soon!`, inline: true},
+        {name: `4v4:`, value: `Coming Soon!`},
+        {name: `Dream:`, value: `Coming Soon!`, inline: true},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
@@ -115,7 +117,16 @@ module.exports.run = async(client, message, args) => {
                 message.channel.send(GeneralEmbed).then(async msg => {
                     var emoji = await reactionMessage(msg, message.author, 300, ["⏩"]);
                     if (emoji === "⏩") {
-                        message.channel.send(SkyWarsEmbed);
+                        message.channel.send(SkyWarsEmbed).then(async msg => {
+                            var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
+                            
+                            if (emoji === "⏪") {
+                                message.channel.send(GeneralEmbed);
+                                    if (emoji === "⏩") {
+                                        message.channel.send(BedWarsEmbed);
+                                    }
+                            }
+                        });
                     }
                 });
             }
