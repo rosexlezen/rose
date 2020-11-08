@@ -62,14 +62,14 @@ module.exports.run = async(client, message, args) => {
         .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774682965589884998/Skywars-64.png')
 	    .setDescription("⏪ = General ⏩ = Bedwars")
         .addFields(
-        { name: `Player:`, value: `${record._custom.names.stripped.name}`, inline: true },
-        { name: 'Extra Information:', value: `Winstreak: ${record.stats.SkyWars.win_streak}\n Souls: ${record.stats.SkyWars.souls}`, inline: true },
-        { name: `Normal Solo:`, value: `Wins: ${record.stats.SkyWars.wins_solo_normal} \nWLR: ${SkywarsSoloNormalLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_solo_normal}\nKDR: ${SkywarsSoloNormalKDR.toFixed(2)}`, inline: true },
-        { name: `Insane Solo:`, value: `Wins: ${SkywarsSoloInsaneWins} \nWLR: ${SkywarsSoloInsaneLDR.toFixed(2)}\nKills: ${SkywarsSoloInsaneKills}\nKDR: ${SkywarsSoloInsaneKDR.toFixed(2)}`, inline: true },
-        { name: `Normal Duo's:`, value: `Coming soon`, inline: true },
-        { name: `Insane Duo's:`, value: `Coming soon`, inline: true },
-        { name: `Ranked:`, value: `Wins: ${record.stats.SkyWars.wins_ranked} \nWLR: ${RankedLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_ranked}\nKDR: ${RankedKDR.toFixed(2)}\nCurrent Kit: ${record.stats.SkyWars.activeKit_RANKED}`, inline: true },
-        { name: `MEGA:`, value: `Coming soon`, inline: true },
+        { name: `Player:`, value: `${record._custom.names.stripped.name}` },
+        { name: 'Extra Information:', value: `Winstreak: ${record.stats.SkyWars.win_streak}\n Souls: ${record.stats.SkyWars.souls}` },
+        { name: `Normal Solo:`, value: `Wins: ${record.stats.SkyWars.wins_solo_normal} \nWLR: ${SkywarsSoloNormalLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_solo_normal}\nKDR: ${SkywarsSoloNormalKDR.toFixed(2)}` },
+        { name: `Insane Solo:`, value: `Wins: ${SkywarsSoloInsaneWins} \nWLR: ${SkywarsSoloInsaneLDR.toFixed(2)}\nKills: ${SkywarsSoloInsaneKills}\nKDR: ${SkywarsSoloInsaneKDR.toFixed(2)}`},
+        { name: `Normal Duo's:`, value: `Coming soon` },
+        { name: `Insane Duo's:`, value: `Coming soon`},
+        { name: `Ranked:`, value: `Wins: ${record.stats.SkyWars.wins_ranked} \nWLR: ${RankedLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_ranked}\nKDR: ${RankedKDR.toFixed(2)}\nCurrent Kit: ${record.stats.SkyWars.activeKit_RANKED}` },
+        { name: `MEGA:`, value: `Coming soon`},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
@@ -80,21 +80,21 @@ module.exports.run = async(client, message, args) => {
         //
         //
 
-        var bedwarsLevel = 96 * 5000 + 7000;
+        var bedwarsLevel = (96 * 5000 + 7000) * 100;
 
         var BedWarsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
         .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774682819947135024/BedWars-64.png')
 	    .setDescription("⏪ = Skywars ⏩ = N/A")
         .addFields(
-        {name: `Player:`, value: `${record._custom.names.stripped.name}`, inline: true},
-        {name: `Extra Information:`, value: `Level: ${bedwarsLevel}⭐ ( ${record.stats.Bedwars.Experience} ) \nWinstreak: ${record.stats.Bedwars.winstreak}`, inline: true},
-        {name: `Solo:`, value: `Coming Soon!`, inline: true},
-        {name: `Duo:`, value: `Coming Soon!`, inline: true},
-        {name: `3's:`, value: `Coming Soon!`, inline: true},
-        {name: `4's:`, value: `Coming Soon!`, inline: true},
-        {name: `4v4:`, value: `Coming Soon!`, inline: true},
-        {name: `Dream:`, value: `Coming Soon!`, inline: true},
+        {name: `Player:`, value: `${record._custom.names.stripped.name}`},
+        {name: `Extra Information:`, value: `Level: ${bedwarsLevel}⭐ ( ${record.stats.Bedwars.Experience} ) \nWinstreak: ${record.stats.Bedwars.winstreak}`},
+        {name: `Solo:`, value: `Coming Soon!`},
+        {name: `Duo:`, value: `Coming Soon!`},
+        {name: `3's:`, value: `Coming Soon!`},
+        {name: `4's:`, value: `Coming Soon!`},
+        {name: `4v4:`, value: `Coming Soon!`},
+        {name: `Dream:`, value: `Coming Soon!`},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
