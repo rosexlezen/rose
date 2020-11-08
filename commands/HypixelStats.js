@@ -105,6 +105,12 @@ module.exports.run = async(client, message, args) => {
         var FourBedwarsKDR = record.stats.Bedwars.four_four_kills_bedwars - record.stats.Bedwars.four_four_deaths_bedwars;
         var FourBedwarsBBL = record.stats.Bedwars.four_four_beds_broken_bedwars - record.stats.Bedwars.four_four_beds_lost_bedwars;
 
+        // Four vs Four Bedwars
+        var FvFBedwarsLDR = record.stats.Bedwars.two_four_wins_bedwars - record.stats.Bedwars.two_four_losses_bedwars;
+        var FvFBedwarsFKDR = record.stats.Bedwars.two_four_final_kills_bedwars - record.stats.Bedwars.two_four_final_deaths_bedwars;
+        var FvFBedwarsKDR = record.stats.Bedwars.two_four_kills_bedwars - record.stats.Bedwars.two_four_deaths_bedwars;
+        var FvFBedwarsBBL = record.stats.Bedwars.two_four_beds_broken_bedwars - record.stats.Bedwars.two_four_beds_lost_bedwars;
+
         // Overall Bedwars
         var OverallBedwarsLDR = record.stats.Bedwars.two_four_wins_bedwars - record.stats.Bedwars.two_four_losses_bedwars;
         var OverallBedwarsFKDR = record.stats.Bedwars.two_four_final_kills_bedwars - record.stats.Bedwars.two_four_final_deaths_bedwars;
