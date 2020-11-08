@@ -83,27 +83,27 @@ module.exports.run = async(client, message, args) => {
 
         // Overall Bedwars
         var OverallBedwarsLDR = record.stats.Bedwars.wins_bedwars - record.stats.Bedwars.losses_bedwars;
-        var OverallBedwarsFKDR = record.stats.Bedwars.final_kills_bedwars - record.stats.Bedwars.final_deaths_bedwars;
+        var OverallBedwarsFKDR = record.stats.Bedwars.final_kills_bedwars - (record.stats.Bedwars.final_deaths_bedwars + record.stats.Bedwars.kills_bedwars);
         var OverallBedwarsKDR = record.stats.Bedwars.deaths_bedwars - record.stats.Bedwars.kills_bedwars; 
 
         // Solo Bedwars
         var SoloBedwarsLDR = record.stats.Bedwars.eight_one_wins_bedwars - record.stats.Bedwars.eight_one_losses_bedwars;
-        var SoloBedwarsFKDR = record.stats.Bedwars.eight_one_final_kills_bedwars - record.stats.Bedwars.eight_one_final_deaths_bedwars;
+        var SoloBedwarsFKDR = record.stats.Bedwars.eight_one_final_kills_bedwars - (record.stats.Bedwars.eight_one_final_deaths_bedwars + record.stats.Bedwars.eight_one_deaths_bedwars);
         var SoloBedwarsKDR = record.stats.Bedwars.eight_one_kills_bedwars - record.stats.Bedwars.eight_one_deaths_bedwars;
 
         // Duo Bedwars
         var DuoBedwarsLDR = record.stats.Bedwars.eight_two_wins_bedwars - record.stats.Bedwars.eight_two_losses_bedwars;
-        var DuoBedwarsFKDR = record.stats.Bedwars.eight_two_final_kills_bedwars - record.stats.Bedwars.eight_two_final_deaths_bedwars;
+        var DuoBedwarsFKDR = record.stats.Bedwars.eight_two_final_kills_bedwars - (record.stats.Bedwars.eight_two_final_deaths_bedwars + record.stats.Bedwars.eight_two_deaths_bedwars);
         var DuoBedwarsKDR = record.stats.Bedwars.eight_two_kills_bedwars - record.stats.Bedwars.eight_two_deaths_bedwars;
 
         // Threes Bedwars
         var ThreeBedwarsLDR = record.stats.Bedwars.four_three_wins_bedwars - record.stats.Bedwars.four_three_losses_bedwars;
-        var ThreeBedwarsFKDR = record.stats.Bedwars.four_three_final_kills_bedwars - record.stats.Bedwars.four_three_final_deaths_bedwars;
+        var ThreeBedwarsFKDR = record.stats.Bedwars.four_three_final_kills_bedwars - (record.stats.Bedwars.four_three_final_deaths_bedwars + record.stats.Bedwars.four_three_deaths_bedwars);
         var ThreeBedwarsKDR = record.stats.Bedwars.four_three_kills_bedwars - record.stats.Bedwars.four_three_deaths_bedwars;
 
         // Fours Bedwars
         var FourBedwarsLDR = record.stats.Bedwars.four_four_wins_bedwars - record.stats.Bedwars.four_four_losses_bedwars;
-        var FourBedwarsFKDR = record.stats.Bedwars.four_four_final_kills_bedwars - record.stats.Bedwars.four_four_final_deaths_bedwars;
+        var FourBedwarsFKDR = record.stats.Bedwars.four_four_final_kills_bedwars - (record.stats.Bedwars.four_four_final_deaths_bedwars + record.stats.Bedwars.four_four_deaths_bedwars);
         var FourBedwarsKDR = record.stats.Bedwars.four_four_kills_bedwars - record.stats.Bedwars.four_four_deaths_bedwars;
 
         var BedWarsEmbed = new discord.MessageEmbed()
@@ -112,13 +112,13 @@ module.exports.run = async(client, message, args) => {
 	    .setDescription("⏪ = Skywars ⏩ = N/A")
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
-        {name: `Extra Information:`, value: `Level: ${bedwarsLevel} (might be off a couple stars, fixing soon.) ( ${record.stats.Bedwars.Experience} ) \nWinstreak: ${record.stats.Bedwars.winstreak}`},
-        {name: `Overall:`, value: `Wins: ${record.stats.Bedwars.wins_bedwars}\nLDR: ${OverallBedwarsLDR} \nKills: ${record.stats.Bedwars.kills_bedwars} \nKDR: ${OverallBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.eight_one_final_deaths_bedwars} \nFKDR: ${OverallBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.winstreak} \nBeds Broken: ${record.stats.Bedwars.beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.beds_lost_bedwars}`},
-        {name: `Solo:`, value: `Wins: ${record.stats.Bedwars.eight_one_wins_bedwars}\nLDR: ${SoloBedwarsLDR} \nKills: ${record.stats.Bedwars.eight_one_kills_bedwars} \nKDR: ${SoloBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.eight_one_final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.eight_one_final_deaths_bedwars} \nFKDR: ${SoloBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.eight_one_winstreak} \nBeds Broken: ${record.stats.Bedwars.eight_one_beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.eight_one_beds_lost_bedwars}`},
-        {name: `Duo:`, value: `Wins: ${record.stats.Bedwars.eight_two_wins_bedwars}\nLDR: ${DuoBedwarsLDR} \nKills: ${record.stats.Bedwars.eight_two_kills_bedwars} \nKDR: ${DuoBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.eight_two_final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.eight_two_final_deaths_bedwars} \nFKDR: ${DuoBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.eight_two_winstreak} \nBeds Broken: ${record.stats.Bedwars.eight_two_beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.eight_two_beds_lost_bedwars}`},
-        {name: `3's:`, value: `Wins: ${record.stats.Bedwars.four_three_wins_bedwars}\nLDR: ${ThreeBedwarsLDR} \nKills: ${record.stats.Bedwars.four_three_kills_bedwars} \nKDR: ${ThreeBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.four_three_final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.four_three_final_deaths_bedwars} \nFKDR: ${ThreeBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.four_three_winstreak} \nBeds Broken: ${record.stats.Bedwars.four_three_beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.four_three_beds_lost_bedwars}`},
-        {name: `4's:`, value: `Wins: ${record.stats.Bedwars.four_four_wins_bedwars}\nLDR: ${FourBedwarsLDR} \nKills: ${record.stats.Bedwars.four_four_kills_bedwars} \nKDR: ${FourBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.four_four_final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.four_four_final_deaths_bedwars} \nFKDR: ${FourBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.four_four_winstreak} \nBeds Broken: ${record.stats.Bedwars.four_four_beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.four_four_beds_lost_bedwars}`},
-        {name: `4v4:`, value: `Wins: ${record.stats.Bedwars.two_four_wins_bedwars}\nFinal Kills: ${record.stats.Bedwars.two_four_final_kills_bedwars} \nCurrent Winstreak: ${record.stats.Bedwars.two_four_winstreak} \nBeds Broken: ${record.stats.Bedwars.two_four_beds_broken_bedwars} \n`},
+        {name: `Extra Information:`, value: `Level: Soon. ( ${record.stats.Bedwars.Experience} ) \nWinstreak: ${record.stats.Bedwars.winstreak}`},
+        {name: `Overall:`, value: `Wins: ${record.stats.Bedwars.wins_bedwars}\nLDR: ${OverallBedwarsLDR} \nKills: ${record.stats.Bedwars.kills_bedwars} \nKDR: ${OverallBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.eight_one_final_deaths_bedwars} \nFKDR: ${OverallBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.winstreak} \nBeds Broken: ${record.stats.Bedwars.beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.beds_lost_bedwars}`,  inline: true},
+        {name: `4v4:`, value: `Wins: ${record.stats.Bedwars.two_four_wins_bedwars}\nFinal Kills: ${record.stats.Bedwars.two_four_final_kills_bedwars} \nCurrent Winstreak: ${record.stats.Bedwars.two_four_winstreak} \nBeds Broken: ${record.stats.Bedwars.two_four_beds_broken_bedwars} \n`,  inline: true},
+        {name: `Solo:`, value: `Wins: ${record.stats.Bedwars.eight_one_wins_bedwars}\nLDR: ${SoloBedwarsLDR} \nKills: ${record.stats.Bedwars.eight_one_kills_bedwars} \nKDR: ${SoloBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.eight_one_final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.eight_one_final_deaths_bedwars} \nFKDR: ${SoloBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.eight_one_winstreak} \nBeds Broken: ${record.stats.Bedwars.eight_one_beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.eight_one_beds_lost_bedwars}`,  inline: true},
+        {name: `Duo:`, value: `Wins: ${record.stats.Bedwars.eight_two_wins_bedwars}\nLDR: ${DuoBedwarsLDR} \nKills: ${record.stats.Bedwars.eight_two_kills_bedwars} \nKDR: ${DuoBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.eight_two_final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.eight_two_final_deaths_bedwars} \nFKDR: ${DuoBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.eight_two_winstreak} \nBeds Broken: ${record.stats.Bedwars.eight_two_beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.eight_two_beds_lost_bedwars}`,  inline: true},
+        {name: `3's:`, value: `Wins: ${record.stats.Bedwars.four_three_wins_bedwars}\nLDR: ${ThreeBedwarsLDR} \nKills: ${record.stats.Bedwars.four_three_kills_bedwars} \nKDR: ${ThreeBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.four_three_final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.four_three_final_deaths_bedwars} \nFKDR: ${ThreeBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.four_three_winstreak} \nBeds Broken: ${record.stats.Bedwars.four_three_beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.four_three_beds_lost_bedwars}`,  inline: true},
+        {name: `4's:`, value: `Wins: ${record.stats.Bedwars.four_four_wins_bedwars}\nLDR: ${FourBedwarsLDR} \nKills: ${record.stats.Bedwars.four_four_kills_bedwars} \nKDR: ${FourBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.four_four_final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.four_four_final_deaths_bedwars} \nFKDR: ${FourBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.four_four_winstreak} \nBeds Broken: ${record.stats.Bedwars.four_four_beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.four_four_beds_lost_bedwars}`,  inline: true},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
