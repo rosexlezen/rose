@@ -84,25 +84,7 @@ module.exports.run = async(client, message, args) => {
         //
         //
 
-        const EASY_LEVELS = 4;
-        const EASY_LEVELS_XP = 7000;
-        const XP_PER_PRESTIGE = 96 * 5000 + EASY_LEVELS_XP;
-
-        function getLevelForExp(exp){
-          var prestiges = Math.floor(exp / XP_PER_PRESTIGE);
-          var level = prestiges * LEVELS_PER_PRESTIGE;
-          var expWithoutPrestiges = exp - (prestiges * XP_PER_PRESTIGE);
-
-            for(let i = 1; i <= EASY_LEVELS; ++i){
-               var expForEasyLevel = getExpForLevel(i);
-               if(expWithoutPrestiges < expForEasyLevel){
-                   break;
-               }
-               level++;
-               expWithoutPrestiges -= expForEasyLevel;
-         }
-            var bedwarsLevel = level + expWithoutPrestiges / 5000; 
-        }
+        var bedwarsLevel = 96 * 5000 + 7000;
 
         var BedWarsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
@@ -110,7 +92,7 @@ module.exports.run = async(client, message, args) => {
 	    .setDescription("⏪ = Skywars ⏩ = N/A")
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`, inline: true},
-        {name: `Extra Information:`, value: `Level: ${bedwarsLevel}⭐ ( ${record.stats.bedwars.Experience} ) `, inline: true},
+        {name: `Extra Information:`, value: `Level: ${bedwarsLevel}⭐ ( ${record.stats.bedwars.Experience} ) \nWinstreak: ${record.stats.bedwars.winstreak}`, inline: true},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
