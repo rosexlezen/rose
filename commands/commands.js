@@ -18,7 +18,7 @@ module.exports.run = async(client, message, args) => {
 	)
 	.addFields(
 		{ name: '/ping', value: `_Get the bots' ping_`, inline: true },
-		{ name: '/hs', value: `_Looks for someone's Hypixel stats._`, inline: true },
+		{ name: '/hs', value: `_Looks for someone's **Hypixel stats**._`, inline: true },
 		{ name: '/dice', value: '_Throw a dice_', inline: true },
 		{ name: '/iq (or /iqmeter)', value: `get your IQ.`,  inline: true },
 		{ name: '/coin', value: `does a coinflip`,  inline: true },
