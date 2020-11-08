@@ -92,7 +92,7 @@ module.exports.run = async(client, message, args) => {
 	    .setDescription("⏪ = Skywars ⏩ = N/A")
         .addFields(
         {name: `Player:`, value: `${record._custom.names.stripped.name}`, inline: true},
-        {name: `Extra Information:`, value: `Level: ${bedwarsLevel}⭐ ( ${record.stats.bedwars.Experience} ) \nWinstreak: ${record.stats.bedwars.winstreak}`, inline: true},
+        //{name: `Extra Information:`, value: `Level: ${bedwarsLevel}⭐ ( ${record.stats.bedwars.Experience} ) \nWinstreak: ${record.stats.bedwars.winstreak}`, inline: true},
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
