@@ -160,7 +160,7 @@ module.exports.run = async(client, message, args) => {
 async function reactionMessage(message, author, time, reactions) {
 
 
-    time *= 1000;
+    time *= 750;
 
     for(const reaction of reactions) {
         await message.react(reaction);
