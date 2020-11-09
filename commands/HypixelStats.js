@@ -72,11 +72,11 @@ module.exports.run = async(client, message, args) => {
         .addFields(
         { name: `Player:`, value: `${record._custom.names.stripped.name}` },
         { name: 'Extra Information:', value: `Winstreak: ${record.stats.SkyWars.win_streak}\n Souls: ${record.stats.SkyWars.souls}\nCoins: ${record.stats.SkyWars.coins} \nHeads: ${record.stats.SkyWars.heads} (/heads (player)) \nLast Played: ${record.stats.SkyWars.lastMode}\nBlock Placed: ${record.stats.SkyWars.blocks_placed} \nChests Opened: ${record.stats.SkyWars.chests_opened_team}\nEggs Thrown: ${record.stats.SkyWars.egg_thrown}` },
-        { name: `Normal Solo:`, value: `Wins: ${record.stats.SkyWars.wins_solo_normal} \nWLR: ${SkywarsSoloNormalLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_solo_normal}\nKDR: ${SkywarsSoloNormalKDR.toFixed(2)}` },
-        { name: `Insane Solo:`, value: `Wins: ${SkywarsSoloInsaneWins} \nWLR: ${SkywarsSoloInsaneLDR.toFixed(2)}\nKills: ${SkywarsSoloInsaneKills}\nKDR: ${SkywarsSoloInsaneKDR.toFixed(2)}`},
-        { name: `Normal Duo's:`, value: `Wins: Coming Soon! \nWLR: Coming Soon!\nKills: ${record.stats.SkyWars.kills_team_normal}\nKDR: ${SkywarsTeamsNormalKDR.toFixed(2)}` },
-        { name: `Insane Duo's:`, value: `Wins: Coming Soon! \nWLR: Coming Soon! \nKills: ${SkywarsInsaneKills}!\nKDR: ${SkywarsTeamsInsaneKDR.toFixed(2)}`},
-        { name: `Ranked:`, value: `Wins: ${record.stats.SkyWars.wins_ranked} \nWLR: ${RankedLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_ranked}\nKDR: ${RankedKDR.toFixed(2)}\nCurrent Kit: ${record.stats.SkyWars.activeKit_RANKED}` },
+        { name: `Normal Solo:`, value: `Wins: ${record.stats.SkyWars.wins_solo_normal} \nWLR: ${SkywarsSoloNormalLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_solo_normal}\nKDR: ${SkywarsSoloNormalKDR.toFixed(2)}`,  inline: true },
+        { name: `Insane Solo:`, value: `Wins: ${SkywarsSoloInsaneWins} \nWLR: ${SkywarsSoloInsaneLDR.toFixed(2)}\nKills: ${SkywarsSoloInsaneKills}\nKDR: ${SkywarsSoloInsaneKDR.toFixed(2)}`,  inline: true},
+        { name: `Normal Duo's:`, value: `Wins: Coming Soon! \nWLR: Coming Soon!\nKills: ${record.stats.SkyWars.kills_team_normal}\nKDR: ${SkywarsTeamsNormalKDR.toFixed(2)}`,  inline: true },
+        { name: `Insane Duo's:`, value: `Wins: Coming Soon! \nWLR: Coming Soon! \nKills: ${SkywarsInsaneKills}!\nKDR: ${SkywarsTeamsInsaneKDR.toFixed(2)}`,  inline: true},
+        { name: `Ranked:`, value: `Wins: ${record.stats.SkyWars.wins_ranked} \nWLR: ${RankedLDR.toFixed(2)}\nKills: ${record.stats.SkyWars.kills_ranked}\nKDR: ${RankedKDR.toFixed(2)}\nCurrent Kit: ${record.stats.SkyWars.activeKit_RANKED}`,  inline: true },
         )
 	    .setTimestamp()
         .setFooter(`Executed by: ${message.author.tag}`, `${message.author.avatarURL()}`);
