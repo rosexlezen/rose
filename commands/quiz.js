@@ -30,7 +30,7 @@ message.channel.send("**―――――――――――――――**\nChoose 
     //
 
     if (emoji === "2️⃣") {
-        message.channel.send(`**―――――――――――――――**\nWhich brackets do you use around a p?**―――――――――――――――**`);
+        message.channel.send(`**―――――――――――――――**\nWhich brackets do you use around a p? (In HTML)\n**―――――――――――――――**`);
         message.channel.awaitMessages(m => m.author.id === message.author.id, {max:1}).then(collected =>{
 
             if(collected.first().content.toLowerCase() == '<>' || collected.first().content.toLowerCase() == '<' || collected.first().content.toLowerCase() == '>') {
