@@ -20,9 +20,12 @@ module.exports.run = async(client, message, args) => {
 		{ name: '/ping', value: `_Get the bots' ping_`, inline: true },
 		{ name: '/hs', value: `_Looks for someone's **Hypixel stats**._`, inline: true },
 		{ name: '/dice', value: '_Throw a dice_', inline: true },
-		{ name: '/iq (or /iqmeter)', value: `get your IQ.`,  inline: true },
-		{ name: '/coin', value: `does a coinflip`,  inline: true },
-		{ name: '/rps (rock, paper or scissors)', value: `play rock paper scissors with the bot.`,  inline: true },
+		{ name: '/iq (or /iqmeter)', value: `_get your IQ_.`,  inline: true },
+		{ name: '/coin', value: `_does a coinflip_`,  inline: true },
+		{ name: '/rps (rock, paper or scissors)', value: `_play rock paper scissors with the bot._`,  inline: true },
+		{ name: '/kiss', value: `_kiss someone._`,  inline: true },
+		{ name: '/hug', value: `_hug someone._`,  inline: true },
+		{ name: '/lovemeter (or /love)', value: `_Look how much 2 people are in love with each other._`,  inline: true },
 	)
 	.setImage('https://cdn.discordapp.com/attachments/773879672676548609/773880694296281098/images.jpg')
 	.setTimestamp()
