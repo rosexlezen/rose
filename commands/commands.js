@@ -26,7 +26,6 @@ module.exports.run = async(client, message, args) => {
 		{ name: '/kiss', value: `_kiss someone._`,  inline: true },
 		{ name: '/hug', value: `_hug someone._`,  inline: true },
 		{ name: '/lovemeter (or /love)', value: `_Look how much 2 people are in love with each other._`,  inline: true },
-		{ name: '/bmi', value: `_Calculate your BMI_`,  inline: true },
 	)
 	.setImage('https://cdn.discordapp.com/attachments/773879672676548609/773880694296281098/images.jpg')
 	.setTimestamp()
