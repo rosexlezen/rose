@@ -1,4 +1,6 @@
 const discord = require("discord.js");
+const filter = m => m.content.includes('discord');
+const collector = message.channel.createMessageCollector(filter, { time: 15000 });
 
 module.exports.run = async(client, message, args) => {
 
@@ -8,7 +10,7 @@ module.exports.run = async(client, message, args) => {
     var length = args[-1];
 });
     collector.on('collect', m => {
-    message.channel.send(`How much do you weight?`);
+    message.channel.send(`How much do you weight in kgs?`);
     if (args[0] === isNaN) return message.reply("please input an int!");
     var weight = args[-1];
 })
