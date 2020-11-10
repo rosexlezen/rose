@@ -11,7 +11,7 @@ module.exports.run = async(client, message, args) => {
     }
 
     fs.writeFile("./data/queue.json", JSON.stringify(client.queue. null, 4), err => {
-        if(err) console.log(err);
+        if(err) throw err;
         message.reply("you have succesfully joined the queue!");
     });
 
