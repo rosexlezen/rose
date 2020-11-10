@@ -29,8 +29,9 @@ module.exports.run = async(client, message, args) => {
     warns[warnUser.id].warns++;
     warns[warnUser.id].name = message.author.tag; 
 
-    fs.writeFile("./data/warnings.json", JSON.stringify(warns), (err) =>{
+    let rawdata = fs.writeFile("./data/warnings.json", JSON.stringify(warns), (err) =>{
         if (err) console.log(err);
+    let warning = JSON.parse(rawdata);
     });
 
     var warnEmbed = new discord.MessageEmbed()
@@ -51,6 +52,7 @@ module.exports.run = async(client, message, args) => {
     if(!channel) return message.channel.send(warnEmbed) && message.channel.send('``please create a "logs" channel so warn will display there.``');
     channel.send(warnEmbed);
 
+    message.channel.send(warning);
 } 
 
 module.exports.help = {
