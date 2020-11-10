@@ -1,4 +1,5 @@
 const discord = require("discord.js");
+const client = new discord.Client();
 const fs = require('fs');
 client.queue = require('./data/queue.json');
 
