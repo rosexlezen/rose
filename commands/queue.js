@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 const client = new discord.Client();
 const fs = require('fs');
-client.queue = require('./data/queue.json');
+client.queue = require('./queue.json');
 
 module.exports.run = async(client, message, args) => {
 
@@ -10,7 +10,7 @@ module.exports.run = async(client, message, args) => {
         client.queue[message.author.username]
     }
 
-    fs.writeFile("./data/queue.json", JSON.stringify(client.queue. null, 4), err => {
+    fs.writeFile("./queue.json", JSON.stringify(client.queue. null, 4), err => {
         if(err) throw err;
         message.reply("you have succesfully joined the queue!");
     });
