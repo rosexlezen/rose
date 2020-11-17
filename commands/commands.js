@@ -13,7 +13,7 @@ module.exports.run = async(client, message, args) => {
 		{ name: 'This message will automatically be deleted in 30 seconds!', value: 'These are all the commands:' },
         { name: '\u200B', value: '\u200B' },
         { name: '/help', value: '_Get help to use the bot!_', inline: true },
-		{ name: '/info', value: '_Find all the informatino about the bot!_', inline: true },
+		{ name: '/info', value: '_Find all the information about the bot!_', inline: true },
 		{ name: '/suggest', value: '_Make a suggestion_', inline: true },
 	)
 	.addFields(
