@@ -5,8 +5,8 @@ module.exports.run = async(client, message, args) => {
     const embedHelp = new discord.MessageEmbed()
 	.setColor('#d105ff')
 	.setTitle('Help for the bot')
-	.setURL('https://www.instagram.com/rose.hartje/')
-	.setAuthor('esmee#1413', 'https://cdn.discordapp.com/attachments/773879672676548609/773880038520127508/uhfi.jpg', 'https://www.instagram.com/rose.hartje/')
+	.setURL('https://www.youtube.com/channel/UCZ9ScDckAO4oG8RgGAR6RLg')
+	.setAuthor('esmee#1413', 'https://cdn.discordapp.com/attachments/773879672676548609/773880038520127508/uhfi.jpg', 'https://www.esmee.club/')
 	.setDescription('Get more commands by typing /commands')
 	.setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/773880508743680000/aiudha.jpg')
 	.addFields(

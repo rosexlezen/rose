@@ -17,8 +17,8 @@ let seconds = Math.floor(totalSeconds % 60);
     var infoEmbed = new discord.MessageEmbed()
     .setColor('#d105ff')
 	.setTitle('Information about the bot')
-	.setURL('https://www.instagram.com/rose.hartje/')
-	.setAuthor('esmee#1413', 'https://cdn.discordapp.com/attachments/773879672676548609/773880038520127508/uhfi.jpg', 'https://www.instagram.com/rose.hartje/')
+	.setURL('https://www.youtube.com/channel/UCZ9ScDckAO4oG8RgGAR6RLg')
+	.setAuthor('esmee#1413', 'https://cdn.discordapp.com/attachments/773879672676548609/773880038520127508/uhfi.jpg', 'https://www.esmee.club/')
 	.setDescription('Get more information by typing /help')
 	.setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/773880508743680000/aiudha.jpg')
     .addFields(
