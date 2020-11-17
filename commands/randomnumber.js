@@ -8,7 +8,9 @@ if (!args[1]) return message.reply("until how much do you want to get a random n
     min = args[0]
     max = args[1]
 
-    let result = Math.random() * (max - min) + min;
+    if (min > max) return message.reply(`please use /randomnumber (min) (max)`);
+
+    let result = Math.ceil(Math.random()) * (max - min) + min;
 
     message.channel.send(result);
 
