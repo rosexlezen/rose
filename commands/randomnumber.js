@@ -2,10 +2,13 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
 
-if (!args[0]) return message.reply("From how much do you want to get a random number? (Example: /randomnumber 0 10)");
-if (!args[1]) return message.reply("Until how much do you want to get a random number? (Example: /randomnumber 0 10)");
+if (!args[0]) return message.reply("from how much do you want to get a random number? (Example: /randomnumber 0 10)");
+if (!args[1]) return message.reply("until how much do you want to get a random number? (Example: /randomnumber 0 10)");
 
-    var result = Math.ceil(Math.random() * (args[0], args[1]) + 1);
+    min = args[0]
+    max = args[1]
+
+    let result = Math.random() * (max - min) + min;
 
     message.channel.send(result);
 
