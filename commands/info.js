@@ -18,7 +18,7 @@ let seconds = Math.floor(totalSeconds % 60);
     .setColor('#d105ff')
 	.setTitle('Information about the bot')
 	.setURL('https://www.instagram.com/rose.hartje/')
-	.setAuthor('Lezen#3283', 'https://cdn.discordapp.com/attachments/773879672676548609/773880038520127508/uhfi.jpg', 'https://www.instagram.com/rose.hartje/')
+	.setAuthor('esmee#1413', 'https://cdn.discordapp.com/attachments/773879672676548609/773880038520127508/uhfi.jpg', 'https://www.instagram.com/rose.hartje/')
 	.setDescription('Get more information by typing /help')
 	.setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/773880508743680000/aiudha.jpg')
     .addFields(
@@ -27,7 +27,7 @@ let seconds = Math.floor(totalSeconds % 60);
         {name: `Uptime:`, value: `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`}
         )
 	.setTimestamp()
-	.setFooter('creator: Lezen#3283', 'https://cdn.discordapp.com/attachments/773879672676548609/773880029859020820/awdaw.jpg');
+	.setFooter('creator: esmee#1413', 'https://cdn.discordapp.com/attachments/773879672676548609/773880029859020820/awdaw.jpg');
 
     message.channel.send(infoEmbed).then(d => d.delete({timeout: 30000}));
 
