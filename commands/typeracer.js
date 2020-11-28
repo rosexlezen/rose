@@ -3,8 +3,10 @@ const discord = require("discord.js");
 module.exports.run = async(client, message, args) => {
 
     var sentences = [
-        "https://discord.com/channels/770516707370467328/770574971818344448/782377489636917288",
-        "a"
+        "monkey see, monkey do",
+        "joshua is the greatest player of all time",
+        "i ate food now i am tired",
+        "im exhausted all day long"
     ];
     var type = sentences[Math.floor(Math.random() * sentences.length)];
 
@@ -15,7 +17,7 @@ module.exports.run = async(client, message, args) => {
         max = 10;
 
         var rand = Math.floor(Math.random() * (max - min + 1) + min);
-        console.log(`Wait for ${rand} seconds!`).then(d => d.delete({timeout: 20000}));
+        console.log(`Wait for ${rand} seconds! \n${type}`);
         setTimeout(awaitingMessage, rand * 1000);
       }
       
