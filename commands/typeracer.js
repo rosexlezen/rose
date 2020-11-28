@@ -10,9 +10,16 @@ module.exports.run = async(client, message, args) => {
 
     message.channel.send("Typeracer will start in 1-10 seconds, be ready!").then(d => d.delete({timeout: 5000}));
 
-    setTimeout(function(){
-        message.channel.send(`Message will automatically be deleted in 20 seconds! \n${type}`).then(d => d.delete({timeout: 20000})); 
-    }, Math.floor((Math.random() * 10) + 1));
+    function awaitingMessage() {
+        var min = 5,
+        max = 10;
+
+        var rand = Math.floor(Math.random() * (max - min + 1) + min);
+        console.log(`Wait for ${rand} seconds!`);
+        setTimeout(awaitingMessage, rand * 1000);
+      }
+      
+    message.channel.send(awaitingMessage());
 
 } 
 
