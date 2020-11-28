@@ -15,7 +15,7 @@ module.exports.run = async(client, message, args) => {
         max = 10;
 
         var rand = Math.floor(Math.random() * (max - min + 1) + min);
-        console.log(`Wait for ${rand} seconds!`);
+        console.log(`Wait for ${rand} seconds!`).then(d => d.delete({timeout: 20000}));
         setTimeout(awaitingMessage, rand * 1000);
       }
       
