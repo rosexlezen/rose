@@ -17,11 +17,10 @@ module.exports.run = async(client, message, args) => {
           max = 10;
 
         var rand = Math.floor(Math.random() * (max - min + 1) + min);
-        message.channel.send(`Wait for ${rand} seconds! \n${type}`);
         setTimeout(awaitingMessage, rand * 1000);
       }
 
-      return(awaitingMessage());
+      message.channel.send(`"${type}" was sent in ${rand} seconds!`).then(d => d.delete({timeout: 20000}));
       
 } 
 
