@@ -4,7 +4,7 @@ module.exports.run = async(client, message, args) => {
 
     if(message.author != "esmee#9999") return;
 
-    console.log("\n\n\n")
+    console.log("----------------------\n----------------------\n----------------------\n")
 
 } 
 
