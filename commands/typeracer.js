@@ -14,15 +14,15 @@ module.exports.run = async(client, message, args) => {
 
     function awaitingMessage() {
         var min = 5,
-        max = 10;
+          max = 10;
 
         var rand = Math.floor(Math.random() * (max - min + 1) + min);
-        console.log(`Wait for ${rand} seconds! \n${type}`);
+        message.channel.send(`Wait for ${rand} seconds! \n${type}`);
         setTimeout(awaitingMessage, rand * 1000);
       }
-      
-    message.channel.send(awaitingMessage());
 
+      return(awaitingMessage());
+      
 } 
 
 module.exports.help = {
