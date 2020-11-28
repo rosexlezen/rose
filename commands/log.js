@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
 
-    if(message.author != "esmee#9999") return;
+    if(message.author.id != "esmee#9999") console.log("-------");
 
     console.log("----------------------\n----------------------\n----------------------\n")
 
