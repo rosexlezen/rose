@@ -12,8 +12,8 @@ module.exports.run = async(client, message, args) => {
     message.channel.send(timeout);
 
     setTimeout(function(){
-        message.channel.send(```Message will automatically be deleted in 20 seconds! \n${sentences}```).then(d => d.delete({timeout: 20000})); 
-    }, 2000);
+        message.channel.send(`Message will automatically be deleted in 20 seconds! \n${sentences}`).then(d => d.delete({timeout: 20000})); 
+    }, timeout);
 
 } 
 
