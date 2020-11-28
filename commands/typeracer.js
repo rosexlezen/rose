@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
 
-    var timeout = Math.ceil(Math.random() * 100 (5, 10));
+    var timeout = Math.floor((Math.random() * 10) + 5);
     var sentences = [
         "https://discord.com/channels/770516707370467328/770574971818344448/782377489636917288",
         "a"
