@@ -12,6 +12,7 @@ module.exports.run = async(client, message, args) => {
     message.channel.send(`(Timeout time = timeout)`);
 
     setTimeout(function(){
+        var sentences = type[Math.floor(Math.random() * type.length)];
         message.channel.send(`Message will automatically be deleted in 20 seconds! \n${sentences}`).then(d => d.delete({timeout: 20000})); 
     }, timeout);
 
