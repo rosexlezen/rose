@@ -9,12 +9,13 @@ module.exports.run = async(client, message, args) => {
         "im exhausted all day long"
     ];
     var type = sentences[Math.floor(Math.random() * sentences.length)];
+    
+    var min = 5, max = 10;
+    var rand = Math.floor(Math.random() * (max - min + 1) + min);
 
     message.channel.send("Typeracer will start in 1-10 seconds, be ready!").then(d => d.delete({timeout: 5000}));
 
       setTimeout(() => {
-        var min = 5, max = 10;
-        var rand = Math.floor(Math.random() * (max - min + 1) + min);
         message.channel.send(`"${type}" was sent in ${rand} seconds!`).then(d => d.delete({timeout: 20000}));
       }, rand * 1000);
       
