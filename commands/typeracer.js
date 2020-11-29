@@ -34,7 +34,7 @@ module.exports.run = async(client, message, args) => {
             });
     }   
     // Array 2
-    else if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
+    else if(type === "https://media.discordapp.net/attachments/770574971818344448/782377489464295484/unknown.png") {
       message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
                 if(collected.first().content.toLowerCase() == 'joshua is the greatest person of all time.') {
                         message.reply(`${guessed} got it first!`);
@@ -46,7 +46,7 @@ module.exports.run = async(client, message, args) => {
             });
     }   
     // Array 3
-    else if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
+    else if(type === "https://media.discordapp.net/attachments/770574971818344448/782398767826599997/unknown.png") {
         message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
                   if(collected.first().content.toLowerCase() == "i ate food now i'm tired") {
                           message.reply(`${guessed} got it first!`);
@@ -58,7 +58,7 @@ module.exports.run = async(client, message, args) => {
               });
       }   
       // Array 4
-  else if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
+  else if(type === "https://media.discordapp.net/attachments/770574971818344448/782398900195033119/unknown.png") {
     message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
               if(collected.first().content.toLowerCase() == "i'm exhausted all day long") {
                       message.reply(`${guessed} got it first!`);
