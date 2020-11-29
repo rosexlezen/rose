@@ -3,10 +3,10 @@ const discord = require("discord.js");
 module.exports.run = async(client, message, args) => {
 
     var sentences = [
-        "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png",
-        "https://media.discordapp.net/attachments/770574971818344448/782377489464295484/unknown.png",
-        "https://media.discordapp.net/attachments/770574971818344448/782398767826599997/unknown.png",
-        "https://media.discordapp.net/attachments/770574971818344448/782398900195033119/unknown.png"
+        "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png"
+        //"https://media.discordapp.net/attachments/770574971818344448/782377489464295484/unknown.png",
+        //"https://media.discordapp.net/attachments/770574971818344448/782398767826599997/unknown.png",
+        //"https://media.discordapp.net/attachments/770574971818344448/782398900195033119/unknown.png"
     ];
     var type = sentences[Math.floor(Math.random() * sentences.length)];
 
@@ -19,13 +19,12 @@ module.exports.run = async(client, message, args) => {
         message.channel.send(`**This message will delete in 30 seconds!**\nFirst who types "${type}" wins!\n*This message was sent in ${rand} seconds!*`).then(d => d.delete({timeout: 30000}));
       }, rand * 1000);
 
-       var guessed = message.author;
-
     // Array 1
     if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
         message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
+            message.channel.send("b");
                   if(collected.first().content.toLowerCase() == 'monkey see, monkey do') {
-                          message.reply(`${guessed} got it first!`);
+                          message.reply(`a`);
                   }
                   else
                   message.reply('Operation canceled.').then(d => d.delete({timeout: 5000}));      

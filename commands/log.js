@@ -2,9 +2,9 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
 
-    if(message.author != "esmee#9999") return message.reply(`You cannot do this.`).then(d => d.delete({timeout: 5000}));
+    if(message.author.id === "474306829459914753") return console.log("----------------------\n----------------------\n----------------------\n");
     else {
-    console.log("----------------------\n----------------------\n----------------------\n")
+    message.reply(`You cannot do this.`).then(d => d.delete({timeout: 5000}));
     }
 } 
 
