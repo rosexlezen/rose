@@ -20,20 +20,19 @@ module.exports.run = async(client, message, args) => {
       }, rand * 1000);
 
        var guessed = message.author;
-       message.channel.send(`${guessed} a`); 
 
-    //   // Array 1
-    //   if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
-    //   message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
-    //             if(collected.first().content.toLowerCase() == 'monkey see, monkey do') {
-    //                     message.reply(`${guessed} got it first!`);
-    //             }
-    //             else
-    //             message.reply('Operation canceled.').then(d => d.delete({timeout: 5000}));      
-    //             }).catch(() => {
-    //             message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
-    //         });
-    // }   
+    // Array 1
+    if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
+        message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
+                  if(collected.first().content.toLowerCase() == 'monkey see, monkey do') {
+                          message.reply(`${guessed} got it first!`);
+                  }
+                  else
+                  message.reply('Operation canceled.').then(d => d.delete({timeout: 5000}));      
+                  }).catch(() => {
+                  message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
+              });
+      } 
     // Array 2
 //     else if(type === "https://media.discordapp.net/attachments/770574971818344448/782377489464295484/unknown.png") {
 //       message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
