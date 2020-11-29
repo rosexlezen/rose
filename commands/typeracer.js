@@ -16,7 +16,7 @@ module.exports.run = async(client, message, args) => {
     message.channel.send("Typeracer will start in 1-10 seconds, be ready!").then(d => d.delete({timeout: 15000}));
 
       setTimeout(() => {
-        message.channel.send(`**This message will delete in 20 seconds!**\nFirst who types "${type}" wins!\n*This message was sent in ${rand} seconds!*`).then(d => d.delete({timeout: 20000}));
+        message.channel.send(`**This message will delete in 30 seconds!**\nFirst who types "${type}" wins!\n*This message was sent in ${rand} seconds!*`).then(d => d.delete({timeout: 30000}));
       }, rand * 1000);
 
        var guessed = message.author;
