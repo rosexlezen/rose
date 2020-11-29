@@ -32,7 +32,6 @@ module.exports.run = async(client, message, args) => {
                 }).catch(() => {
                 message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
             });
-    break;
     }   
     // Array 2
     else if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
@@ -45,7 +44,6 @@ module.exports.run = async(client, message, args) => {
                 }).catch(() => {
                 message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
             });
-    break;
     }   
     // Array 3
     else if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
@@ -58,7 +56,6 @@ module.exports.run = async(client, message, args) => {
                   }).catch(() => {
                   message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
               });
-      break;
       }   
       // Array 4
   else if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
@@ -71,7 +68,6 @@ module.exports.run = async(client, message, args) => {
               }).catch(() => {
               message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
           });
-  break;
   } else {
       message.channel.send("Something went wrong...");
   }   
