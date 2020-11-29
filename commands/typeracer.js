@@ -20,7 +20,7 @@ module.exports.run = async(client, message, args) => {
       }, rand * 1000);
 
        var guessed = message.author;
-       message.channel.send(guessed); 
+       message.channel.send(`${guessed} a`); 
 
     //   // Array 1
     //   if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
