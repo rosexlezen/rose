@@ -3,10 +3,10 @@ const discord = require("discord.js");
 module.exports.run = async(client, message, args) => {
 
     var sentences = [
-        "monkey see, monkey do",
-        "joshua is the greatest player of all time",
-        "i ate food now i am tired",
-        "im exhausted all day long"
+        "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png",
+        "https://media.discordapp.net/attachments/770574971818344448/782377489464295484/unknown.png",
+        "https://media.discordapp.net/attachments/770574971818344448/782398767826599997/unknown.png",
+        "https://media.discordapp.net/attachments/770574971818344448/782398900195033119/unknown.png"
     ];
     var type = sentences[Math.floor(Math.random() * sentences.length)];
 
@@ -18,8 +18,65 @@ module.exports.run = async(client, message, args) => {
       setTimeout(() => {
         message.channel.send(`**This message will delete in 20 seconds!**\nFirst who types "${type}" wins!\n*This message was sent in ${rand} seconds!*`).then(d => d.delete({timeout: 20000}));
       }, rand * 1000);
-      
-} 
+
+      var guessed = message.author; 
+
+      // Array 1
+      if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
+      message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
+                if(collected.first().content.toLowerCase() == 'monkey see, monkey do') {
+                        message.reply(`${guessed} got it first!`);
+                }
+                else
+                message.reply('Operation canceled.').then(d => d.delete({timeout: 5000}));      
+                }).catch(() => {
+                message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
+            });
+    break;
+    }   
+    // Array 2
+    else if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
+      message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
+                if(collected.first().content.toLowerCase() == 'joshua is the greatest person of all time.') {
+                        message.reply(`${guessed} got it first!`);
+                }
+                else
+                message.reply('Operation canceled.').then(d => d.delete({timeout: 5000}));      
+                }).catch(() => {
+                message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
+            });
+    break;
+    }   
+    // Array 3
+    else if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
+        message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
+                  if(collected.first().content.toLowerCase() == "i ate food now i'm tired") {
+                          message.reply(`${guessed} got it first!`);
+                  }
+                  else
+                  message.reply('Operation canceled.').then(d => d.delete({timeout: 5000}));      
+                  }).catch(() => {
+                  message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
+              });
+      break;
+      }   
+      // Array 4
+  else if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
+    message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
+              if(collected.first().content.toLowerCase() == "i'm exhausted all day long") {
+                      message.reply(`${guessed} got it first!`);
+              }
+              else
+              message.reply('Operation canceled.').then(d => d.delete({timeout: 5000}));      
+              }).catch(() => {
+              message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
+          });
+  break;
+  } else {
+      message.channel.send("Something went wrong...");
+  }   
+}
+
 
 module.exports.help = {
     name: "typeracer"
