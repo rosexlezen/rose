@@ -139,66 +139,82 @@ module.exports.run = async(client, message, args) => {
         //
         //
 
-    message.channel.send(GeneralEmbed).then(async msg => {
-    var emoji = await reactionMessage(msg, message.author, 300, ["⏩"]);
-    
-    if (emoji === "⏩") {
-        message.channel.send(SkyWarsEmbed).then(async msg => {
-            var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
 
-            if (emoji === "⏪") {
-                message.channel.send(GeneralEmbed).then(async msg => {
-                    var emoji = await reactionMessage(msg, message.author, 300, ["⏩"]);
-                    if (emoji === "⏩") {
-                        message.channel.send(SkyWarsEmbed).then(async msg => {
-                            var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
-                            
-                            if (emoji === "⏪") {
-                                message.channel.send(GeneralEmbed);
-                                    if (emoji === "⏩") {
-                                        message.channel.send(BedWarsEmbed);
-                                    }
-                            }
-                        });
-                    }
+        message.channel.send(GeneralEmbed).then(async msg => {
+        var emoji = await reactionMessage(msg, message.author, 300, ["⏩", "❌"]);
+
+        while(emoji != "❌");
+            if (emoji === "⏩") {
+                message.channel.send("A:").then(async msg => {
+                    var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
+                    message.channel.send("B:");
+                    if(emoji == "⏪")
+                        break;
                 });
             }
+        });
+            
+
+//     message.channel.send(GeneralEmbed).then(async msg => {
+//     var emoji = await reactionMessage(msg, message.author, 300, ["⏩"]);
+    
+//     if (emoji === "⏩") {
+//         message.channel.send(SkyWarsEmbed).then(async msg => {
+//             var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
+
+//             if (emoji === "⏪") {
+//                 message.channel.send(GeneralEmbed).then(async msg => {
+//                     var emoji = await reactionMessage(msg, message.author, 300, ["⏩"]);
+//                     if (emoji === "⏩") {
+//                         message.channel.send(SkyWarsEmbed).then(async msg => {
+//                             var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
+                            
+//                             if (emoji === "⏪") {
+//                                 message.channel.send(GeneralEmbed);
+//                                     if (emoji === "⏩") {
+//                                         message.channel.send(BedWarsEmbed);
+//                                     }
+//                             }
+//                         });
+//                     }
+//                 });
+//             }
         
 
-            if (emoji === "⏩") {
-                message.channel.send(BedWarsEmbed).then(async msg => {
-                    var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
-                    if (emoji === "⏪") {
-                        message.channel.send(SkyWarsEmbed).then(async msg => {
-                            var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
-                            if (emoji === "⏪") {
-                                message.channel.send(GeneralEmbed);
-                            }
+//             if (emoji === "⏩") {
+//                 message.channel.send(BedWarsEmbed).then(async msg => {
+//                     var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
+//                     if (emoji === "⏪") {
+//                         message.channel.send(SkyWarsEmbed).then(async msg => {
+//                             var emoji = await reactionMessage(msg, message.author, 300, ["⏪", "⏩"]);
+//                             if (emoji === "⏪") {
+//                                 message.channel.send(GeneralEmbed);
+//                             }
 
-                            if (emoji === "⏩") {
-                                message.channel.send(BedWarsEmbed);
-                            }
-                    });
-                }
-
-
-                if (emoji === "⏩") {
-                    message.channel.send("Coming Soon!").then(async msg => {
-                        var emoji = await reactionMessage(msg, message.author, 300, ["⏪"]);
-                        if (emoji === "⏪") {
-                            message.channel.send(BedWarsEmbed);
-
-                        }
-                    });
-                }
-                });
-            }
+//                             if (emoji === "⏩") {
+//                                 message.channel.send(BedWarsEmbed);
+//                             }
+//                     });
+//                 }
 
 
-        });
-    }
+//                 if (emoji === "⏩") {
+//                     message.channel.send("Coming Soon!").then(async msg => {
+//                         var emoji = await reactionMessage(msg, message.author, 300, ["⏪"]);
+//                         if (emoji === "⏪") {
+//                             message.channel.send(BedWarsEmbed);
+
+//                         }
+//                     });
+//                 }
+//                 });
+//             }
+
+
+//         });
+//     }
     
-});
+// });
 
 
 
