@@ -1,5 +1,6 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
+const weather = require('weather-js');
 const fs = require("fs"); 
 
 const client = new discord.Client();

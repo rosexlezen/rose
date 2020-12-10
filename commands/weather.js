@@ -1,4 +1,5 @@
 const weather = require('weather-js');
+
 const discord = require('discord.js');
 
 module.exports.run = async(client, message, args) => {
