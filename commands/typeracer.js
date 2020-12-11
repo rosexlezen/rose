@@ -1,7 +1,6 @@
 const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
-    if(message.author.id === "474306829459914753") return;
     var sentences = [
         "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png"
         //"https://media.discordapp.net/attachments/770574971818344448/782377489464295484/unknown.png",
