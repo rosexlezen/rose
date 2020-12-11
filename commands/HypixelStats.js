@@ -41,29 +41,29 @@ module.exports.run = async(client, message, args) => {
         //
 
         // Solo Normal
-        var SkywarsSoloNormalKDR = record.stats.SkyWars.kills_solo_normal / record.stats.SkyWars.deaths_solo_normal;
-        var SkywarsSoloNormalLDR = record.stats.SkyWars.wins_solo_normal / record.stats.SkyWars.losses_solo_normal;
+        // var SkywarsSoloNormalKDR = record.stats.SkyWars.kills_solo_normal / record.stats.SkyWars.deaths_solo_normal;
+        // var SkywarsSoloNormalLDR = record.stats.SkyWars.wins_solo_normal / record.stats.SkyWars.losses_solo_normal;
 
-        // Solo Insane 
-        var SkywarsSoloInsaneKills = record.stats.SkyWars.kills_solo - record.stats.SkyWars.kills_solo_normal;
-        var SkywarsSoloInsaneKDR = SkywarsSoloInsaneKills / record.stats.SkyWars.deaths_solo;
+        // // Solo Insane 
+        // var SkywarsSoloInsaneKills = record.stats.SkyWars.kills_solo - record.stats.SkyWars.kills_solo_normal;
+        // var SkywarsSoloInsaneKDR = SkywarsSoloInsaneKills / record.stats.SkyWars.deaths_solo;
 
-        var SkywarsSoloInsaneWins = record.stats.SkyWars.wins_solo - record.stats.SkyWars.wins_solo_normal;
-        var SkywarsSoloInsaneLDR = SkywarsSoloInsaneWins / record.stats.SkyWars.losses_solo;
+        // var SkywarsSoloInsaneWins = record.stats.SkyWars.wins_solo - record.stats.SkyWars.wins_solo_normal;
+        // var SkywarsSoloInsaneLDR = SkywarsSoloInsaneWins / record.stats.SkyWars.losses_solo;
 
         // Teams Normal
-        var SkywarsTeamsNormalKDR = record.stats.SkyWars.kills_team_normal - record.stats.SkyWars.deaths_team_normal;
+        // var SkywarsTeamsNormalKDR = record.stats.SkyWars.kills_team_normal - record.stats.SkyWars.deaths_team_normal;
         //var SkywarsTeamsNormalWLR = - record.stats.SkyWars.losses_team_normal;
 
         // Teams Insane
-        var SkywarsInsaneKills = record.stats.SkyWars.kills_team - record.stats.SkyWars.kills_team_normal;
-        var SkywarsTeamsInsaneKDR = SkywarsInsaneKills - record.stats.SkyWars.deaths_team_insane;
+        // var SkywarsInsaneKills = record.stats.SkyWars.kills_team - record.stats.SkyWars.kills_team_normal;
+        // var SkywarsTeamsInsaneKDR = SkywarsInsaneKills - record.stats.SkyWars.deaths_team_insane;
         //var SkywarsTeamsInsaneWLR = - record.stats.SkyWars.losses_team_insane;
 
 
         // Ranked
-        var RankedKDR = record.stats.SkyWars.kills_ranked / record.stats.SkyWars.deaths_ranked;
-        var RankedLDR = record.stats.SkyWars.wins_ranked / record.stats.SkyWars.losses_ranked;
+        // var RankedKDR = record.stats.SkyWars.kills_ranked / record.stats.SkyWars.deaths_ranked;
+        // var RankedLDR = record.stats.SkyWars.wins_ranked / record.stats.SkyWars.losses_ranked;
 
         var SkyWarsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
@@ -87,41 +87,14 @@ module.exports.run = async(client, message, args) => {
         //
         //
 
-        var bedwarsLevel = (96 * 5000 + 7000) / 100;
-
-        // Overall Bedwars
-        var OverallBedwarsLDR = record.stats.Bedwars.wins_bedwars - record.stats.Bedwars.losses_bedwars;
-        var OverallBedwarsFKDR = record.stats.Bedwars.final_kills_bedwars - (record.stats.Bedwars.final_deaths_bedwars + record.stats.Bedwars.kills_bedwars);
-        var OverallBedwarsKDR = record.stats.Bedwars.deaths_bedwars - record.stats.Bedwars.kills_bedwars; 
-
-        // Solo Bedwars
-        var SoloBedwarsLDR = record.stats.Bedwars.eight_one_wins_bedwars - record.stats.Bedwars.eight_one_losses_bedwars;
-        var SoloBedwarsFKDR = record.stats.Bedwars.eight_one_final_kills_bedwars - (record.stats.Bedwars.eight_one_final_deaths_bedwars + record.stats.Bedwars.eight_one_deaths_bedwars);
-        var SoloBedwarsKDR = record.stats.Bedwars.eight_one_kills_bedwars - record.stats.Bedwars.eight_one_deaths_bedwars;
-
-        // Duo Bedwars
-        var DuoBedwarsLDR = record.stats.Bedwars.eight_two_wins_bedwars - record.stats.Bedwars.eight_two_losses_bedwars;
-        var DuoBedwarsFKDR = record.stats.Bedwars.eight_two_final_kills_bedwars - (record.stats.Bedwars.eight_two_final_deaths_bedwars + record.stats.Bedwars.eight_two_deaths_bedwars);
-        var DuoBedwarsKDR = record.stats.Bedwars.eight_two_kills_bedwars - record.stats.Bedwars.eight_two_deaths_bedwars;
-
-        // Threes Bedwars
-        var ThreeBedwarsLDR = record.stats.Bedwars.four_three_wins_bedwars - record.stats.Bedwars.four_three_losses_bedwars;
-        var ThreeBedwarsFKDR = record.stats.Bedwars.four_three_final_kills_bedwars - (record.stats.Bedwars.four_three_final_deaths_bedwars + record.stats.Bedwars.four_three_deaths_bedwars);
-        var ThreeBedwarsKDR = record.stats.Bedwars.four_three_kills_bedwars - record.stats.Bedwars.four_three_deaths_bedwars;
-
-        // Fours Bedwars
-        var FourBedwarsLDR = record.stats.Bedwars.four_four_wins_bedwars - record.stats.Bedwars.four_four_losses_bedwars;
-        var FourBedwarsFKDR = record.stats.Bedwars.four_four_final_kills_bedwars - (record.stats.Bedwars.four_four_final_deaths_bedwars + record.stats.Bedwars.four_four_deaths_bedwars);
-        var FourBedwarsKDR = record.stats.Bedwars.four_four_kills_bedwars - record.stats.Bedwars.four_four_deaths_bedwars;
-
         var BedWarsEmbed = new discord.MessageEmbed()
         .setColor('#d105ff')
         .setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/774682819947135024/BedWars-64.png')
 	    .setDescription("⏪ = Skywars ⏩ = N/A")
-        .addFields(
+        .addFields( 
         {name: `Player:`, value: `${record._custom.names.stripped.name}`},
         {name: `Disclaimer:`, value: `KDR, FKDR & WLR could be bugged.`},
-        {name: `Extra Information:`, value: `Level: Soon. ( ${record.stats.Bedwars.Experience} ) \nWinstreak: ${record.stats.Bedwars.winstreak}`},
+        {name: `Extra Information:`, value: `Level: ${record.stats.achievements.bedwars_level} \nWinstreak: ${record.stats.Bedwars.winstreak}`},
         {name: `Overall:`, value: `Wins: ${record.stats.Bedwars.wins_bedwars}\nWLR: ${OverallBedwarsLDR} \nKills: ${record.stats.Bedwars.kills_bedwars} \nKDR: Coming Soon. \nFinal Kills: ${record.stats.Bedwars.final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.eight_one_final_deaths_bedwars} \nFKDR: ${OverallBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.winstreak} \nBeds Broken: ${record.stats.Bedwars.beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.beds_lost_bedwars}`,  inline: true},
         {name: `Solo:`, value: `Wins: ${record.stats.Bedwars.eight_one_wins_bedwars}\nWLR: ${SoloBedwarsLDR} \nKills: ${record.stats.Bedwars.eight_one_kills_bedwars} \nKDR: ${SoloBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.eight_one_final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.eight_one_final_deaths_bedwars} \nFKDR: ${SoloBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.eight_one_winstreak} \nBeds Broken: ${record.stats.Bedwars.eight_one_beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.eight_one_beds_lost_bedwars}`,  inline: true},
         {name: `Duo:`, value: `Wins: ${record.stats.Bedwars.eight_two_wins_bedwars}\nWLR: ${DuoBedwarsLDR} \nKills: ${record.stats.Bedwars.eight_two_kills_bedwars} \nKDR: ${DuoBedwarsKDR} \nFinal Kills: ${record.stats.Bedwars.eight_two_final_kills_bedwars} \nFinal Deaths: ${record.stats.Bedwars.eight_two_final_deaths_bedwars} \nFKDR: ${DuoBedwarsFKDR} \nCurrent Winstreak: ${record.stats.Bedwars.eight_two_winstreak} \nBeds Broken: ${record.stats.Bedwars.eight_two_beds_broken_bedwars} \nBeds Lost ${record.stats.Bedwars.eight_two_beds_lost_bedwars}`,  inline: true},
@@ -138,7 +111,7 @@ module.exports.run = async(client, message, args) => {
         // Sending MSGS
         //
         //
-            
+    
     message.channel.send(GeneralEmbed).then(async msg => {
     var emoji = await reactionMessage(msg, message.author, 300, ["⏩"]);
     

@@ -13,6 +13,9 @@ module.exports.run = async(client, message, args) => {
     var min = 5, max = 10;
     var rand = Math.floor(Math.random() * (max - min + 1) + min);
 
+    var guessed = message.author.first;
+    var guess = message.author;
+
     message.channel.send("Typeracer will start in 1-10 seconds, be ready!").then(d => d.delete({timeout: 15000}));
 
       setTimeout(() => {
@@ -23,7 +26,7 @@ module.exports.run = async(client, message, args) => {
        if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
         message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
                   if(collected.first().content.toLowerCase() == 'monkey see, monkey do') {
-                          message.reply(`${guessed} got it first!`);
+                          message.reply(`${guessed} (or ${guess}) got it first!`);
                   }
                   else
                   message.reply('Operation canceled.').then(d => d.delete({timeout: 5000}));      
