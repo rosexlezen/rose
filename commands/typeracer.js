@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
     var sentences = [
-        "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png"
+        "monkey see, monkey do"
         //"https://media.discordapp.net/attachments/770574971818344448/782377489464295484/unknown.png",
         //"https://media.discordapp.net/attachments/770574971818344448/782398767826599997/unknown.png",
         //"https://media.discordapp.net/attachments/770574971818344448/782398900195033119/unknown.png"
@@ -18,13 +18,13 @@ module.exports.run = async(client, message, args) => {
     message.channel.send("Typeracer will start in 1-10 seconds, be ready!").then(d => d.delete({timeout: 15000}));
 
       setTimeout(() => {
-        message.channel.send(`**This message will delete in 30 seconds!**\nFirst who types "${type}" wins!\n*This message was sent in ${rand} seconds!*`).then(d => d.delete({timeout: 30000}));
+        message.channel.send(`**This message will delete in 30 seconds!**\nFirst person who types "${type}" wins!\n*This message was sent in ${rand} seconds!*`).then(d => d.delete({timeout: 30000}));
       }, rand * 1000);
 
        // Array 1
        if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
         message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
-                  if(collected.first().content.toLowerCase() == 'monkey see, monkey do') {
+                  if(collected.first().content.toLowerCase() === 'monkey see, monkey do') {
                           message.reply(`${guessed} (or ${guess}) got it first!`);
                   }
                   else
