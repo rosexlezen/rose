@@ -4,7 +4,7 @@ module.exports.run = async(client, message, args) => {
     
     const user = message.mentions.users.first() || message.author;
 
-    var pfp = user.avatar_url;
+    var pfp = user.avatarURL();
 
     const avatarEmbed = new Discord.MessageEmbed()
         .setColor("#ffd4fa")
