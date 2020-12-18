@@ -1,7 +1,10 @@
 const Discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
-    
+
+    const user = message.mentions.users.first();
+    let pfp = user.avatarURL();
+
     if(!args[0]) {
         const avatarEmbed = new Discord.MessageEmbed()
         .setColor("#ffd4fa")
@@ -12,10 +15,7 @@ module.exports.run = async(client, message, args) => {
     }
 
     else {
-    const user = message.mentions.users.first();
-
-    let pfp = user.avatarURL();
-
+        
     const avatarEmbed = new Discord.MessageEmbed()
         .setColor("#ffd4fa")
         .setTitle(`**${user.username}**'s Profile Picture:`)
