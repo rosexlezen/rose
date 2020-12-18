@@ -18,26 +18,7 @@ message.channel.send("**―――――――――――――――**\nChoose 
             if(collected.first().content.toLowerCase() == 'h1') {
                 message.reply(`your answer is correct!`);
             } 
-            
-            else if(collected.first().content.toLowerCase() == 'hint') {
-                message.channel.send(`A4, A3's etc.. have the same system.`);
 
-                message.channel.awaitMessages(m => m.author.id === message.author.id, {max:1}).then(collected =>{
-                    if(collected.first().content.toLowerCase() == 'hint') {
-                    message.channel.send(`Use the "h" statement.`);
-                    if(collected.first().content.toLowerCase() == 'h1') {
-                        message.reply(`your answer is correct!`);
-                    } else {
-                        message.reply(`your answer is incorrect!`);
-                    }
-                    }
-                });
-                if(collected.first().content.toLowerCase() == 'h1') {
-                    message.reply(`your answer is correct!`);
-                } else {
-                    message.reply(`your answer is incorrect!`);
-                }
-            } 
             else {
                 message.reply(`your answer is incorrect!`);
             }
