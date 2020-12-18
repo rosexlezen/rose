@@ -23,17 +23,13 @@ module.exports.run = async(client, message, args) => {
 
        // Array 1
        if(type === "https://media.discordapp.net/attachments/770574971818344448/782399042981724221/unknown.png") {
-         message.channel.send("A");
         message.channel.awaitMessages({max: 1, time: 30000}).then(collected => {
-          message.channel.send("B");
                   if(collected.first().content.toLowerCase() === 'monkey see, monkey do') {
-                    message.channel.send("C");
                           message.reply(`${guessed} (or ${guess}) got it first!`);
                   }
                   else
                   message.reply('Operation canceled.').then(d => d.delete({timeout: 5000}));      
                   }).catch(() => {
-                    message.channel.send("D");
                   message.reply('No answer after 30 seconds, operation canceled.').then(d => d.delete({timeout: 5000}));
               });
       }

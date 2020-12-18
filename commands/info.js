@@ -10,10 +10,6 @@ totalSeconds %= 3600;
 let minutes = Math.floor(totalSeconds / 60);
 let seconds = Math.floor(totalSeconds % 60);
 
-    if(message.author.id != 733454451754663946) {
-        message.reply("please don't use the test command.")
-    } else {
-
     var infoEmbed = new discord.MessageEmbed()
     .setColor('#d105ff')
 	.setTitle('Information about the bot')
@@ -30,8 +26,6 @@ let seconds = Math.floor(totalSeconds % 60);
 	.setFooter('creator: esmee#1413', 'https://cdn.discordapp.com/attachments/773879672676548609/773880029859020820/awdaw.jpg');
 
     message.channel.send(infoEmbed).then(d => d.delete({timeout: 30000}));
-
-    } 
 }
 
 module.exports.help = {
