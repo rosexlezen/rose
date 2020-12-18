@@ -14,10 +14,19 @@ message.channel.send("**―――――――――――――――**\nChoose 
         message.channel.send(`**―――――――――――――――**\nHow do you get the biggest text without CSS in HTML?\n**―――――――――――――――**`);
         message.channel.awaitMessages(m => m.author.id === message.author.id, {max:1}).then(collected =>{
 
-            if(collected.first().content.toLowerCase() == 'h1' || collected.first().content.toLowerCase() == 'h' || collected.first().content.toLowerCase() == '1') {
+            if(collected.first().content.toLowerCase() == 'h1') {
                 message.reply(`your answer is correct!`);
+            } 
+            
+            else if(collected.first().content.toLowerCase() == 'hint') {
+                message.channel.send(`A4, A3's etc.. have the same system.`);
 
-            } else {
+                if(collected.first().content.toLowerCase() == 'hint') {
+                    message.channel.send(`Use the "h" statement.`);
+                }
+            } 
+            
+            else {
                 message.reply(`your answer is incorrect!`);
             }
 
