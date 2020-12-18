@@ -2,7 +2,9 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
 
-    message.channel.send("Ping = ``" + (message.createdTimestamp - Date.now()) + "ms``");
+    setTimeout(() => {
+        message.channel.send("Ping = ``" + (message.createdTimestamp - Date.now()) + "ms``");
+    }, 200);
 
 } 
 
