@@ -6,7 +6,7 @@ module.exports.run = async(client, message, args) => {
         const avatarEmbed = new Discord.MessageEmbed()
         .setColor("#ffd4fa")
         .setTitle(`**${user.username}**'s Profile Picture:`)
-        .setImage(pfp);
+        .setImage(message.author.avatarURL());
 
         message.channel.send(avatarEmbed);
     }
