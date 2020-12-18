@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
 
-message.channel.send(`_Please wait until all emojis have been loaded._`);
+message.channel.send(`Please wait until all emojis have been loaded.\n_PS: if you need a hint try typing "hint". (Max 2 hints)_`);
 message.channel.send("**―――――――――――――――**\nChoose a question\n**―――――――――――――――**").then(async msg => {
     var emoji = await reactionMessage(msg, message.author, 300, ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"]);
 
@@ -21,9 +21,11 @@ message.channel.send("**―――――――――――――――**\nChoose 
             else if(collected.first().content.toLowerCase() == 'hint') {
                 message.channel.send(`A4, A3's etc.. have the same system.`);
 
-                if(collected.first().content.toLowerCase() == 'hint') {
+                message.channel.awaitMessages(m => m.author.id === message.author.id, {max:1}).then(collected =>{
+                    if(collected.first().content.toLowerCase() == 'hint') {
                     message.channel.send(`Use the "h" statement.`);
-                }
+                    }
+                });
             } 
             
             else {
