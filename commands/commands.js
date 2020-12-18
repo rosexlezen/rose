@@ -29,6 +29,7 @@ module.exports.run = async(client, message, args) => {
 		{ name: '/randomnumber', value: `_Gives you a randomnumber; example: /randomnumber 0 10_`,  inline: true },
 		{ name: '/color', value: `_Displays Minecraft's use of color codes._`,  inline: true },
 		{ name: '/hex', value: `_Display the color by number (in hex)_`,  inline: true },
+		{ name: '/av', value: `_Displays the users profile picture._`,  inline: true },
 	)
 	.setImage('https://cdn.discordapp.com/attachments/773879672676548609/773880694296281098/images.jpg')
 	.setTimestamp()
