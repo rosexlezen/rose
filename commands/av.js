@@ -2,9 +2,19 @@ const Discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
     
-    const user = message.mentions.users.first() || message.author;
+    if(!args[0]) {
+        const avatarEmbed = new Discord.MessageEmbed()
+        .setColor("#ffd4fa")
+        .setTitle(`**${user.username}**'s Profile Picture:`)
+        .setImage(pfp);
 
-    var pfp = user.displayAvatarURL();
+        message.channel.send(avatarEmbed);
+    }
+
+    else {
+    const user = message.mentions.users.first();
+
+    let pfp = user.avatarURL();
 
     const avatarEmbed = new Discord.MessageEmbed()
         .setColor("#ffd4fa")
@@ -12,7 +22,7 @@ module.exports.run = async(client, message, args) => {
         .setImage(pfp);
 
     message.channel.send(avatarEmbed);
-
+    }
 } 
 
 module.exports.help = {
