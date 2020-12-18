@@ -1,8 +1,6 @@
 const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
-
-    if (!args[0]) return message.reply("please provide a username.");
     
     const user = message.mentions.users.first() || message.author;
 
