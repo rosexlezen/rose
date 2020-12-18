@@ -9,8 +9,9 @@ module.exports.run = async(client, message, args) => {
     const hex = new Discord.MessageEmbed()
     .setColor(color)
     .setTitle(color)
+    .setURL("https://www.google.com/search?q=hex+color")
 
-    message.channel.send(`https://www.google.com/search?q=hex+color\n${hex}`);
+    message.channel.send(hex);
 
 }
 
