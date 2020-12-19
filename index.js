@@ -1,9 +1,9 @@
-const discord = require("discord.js");
+const Discord = require("discord.js");
 const botConfig = require("./botconfig.json");
 const fs = require("fs"); 
 
-const client = new discord.Client();
-client.commands = new discord.Collection();
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
 client.login(botConfig.token);
 
 // Command Handler
