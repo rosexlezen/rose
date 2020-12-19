@@ -29,5 +29,5 @@ let seconds = Math.floor(totalSeconds % 60);
 }
 
 module.exports.help = {
-    name: "info"
+    name: "/info"
 }

@@ -22,5 +22,5 @@ if (totalSeconds == !days || !hours || !minutes) {
 } 
 
 module.exports.help = {
-    name: "uptime"
+    name: "/uptime"
 }

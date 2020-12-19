@@ -11,5 +11,5 @@ else if (!args[1]) return message.reply("please provide the names you want love 
 }
 
 module.exports.help = {
-    name: "lovemeter"
+    name: "/lovemeter"
 }

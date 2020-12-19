@@ -181,5 +181,5 @@ async function reactionMessage(message, author, time, reactions) {
 
 }
 module.exports.help = {
-    name: "quiz"
+    name: "/quiz"
 }
