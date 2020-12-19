@@ -4,8 +4,7 @@ module.exports.run = async(client, message, args) => {
 
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Sorry but you cannot use this command!");
 
-    var channel = (message.guild.channels.exists('name', reactionroles))
-    if(!channel) return message.reply('```Create a channel called: "reactionroles"```');
+    if (message.guild.channels.cache.find(c => c.name.toLowerCase() != "reactionroles")) return message.reply('```Create a channel called: "reactionroles"```');
 
     // guild.roles.create({ data: { name: 'test', color: ['#f9d4fa'] } });
     // guild.roles.create({ data: { name: 'test1', color: ['#f599f7'] } });
