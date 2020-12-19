@@ -3,7 +3,9 @@ const discord = require("discord.js");
 module.exports.run = async(client, message, args) => {
 
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Sorry but you cannot use this command!");
-    if (message.guild.channels.cache.find(c => c.name === 'reactionroles')) {
+
+    var channel = message.member.guild.channels.cache.find(c => c.name === 'reactionroles');
+    if(!channel) return message.reply('```Create a channel called: "reactionroles"```');
 
     // guild.roles.create({ data: { name: 'test', color: ['#f9d4fa'] } });
     // guild.roles.create({ data: { name: 'test1', color: ['#f599f7'] } });
@@ -18,10 +20,6 @@ module.exports.run = async(client, message, args) => {
 
     message.channel.send(picture)
     message.channel.send(ColorPink);
-    }
-    else {
-        message.reply('```Create a channel called: "reactionroles"```');
-    }
     
 } 
 
