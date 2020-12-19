@@ -16,7 +16,8 @@ module.exports.run = async(client, message, args) => {
 	)
 	.addFields(
 		{ name: '/info', value: '_Find information about the bot!_', inline: true },
-        { name: '/uptime', value: '_Get the time the bot has been up and running_', inline: true },
+		{ name: '/uptime', value: '_Get the time the bot has been up and running_', inline: true },
+		{ name: '/c-help', value: '_Get information to setup color roles._', inline: true },
 	)
 	.setImage('https://cdn.discordapp.com/attachments/773879672676548609/773880694296281098/images.jpg')
 	.setTimestamp()

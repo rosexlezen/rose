@@ -7,7 +7,7 @@ module.exports.run = async(client, message, args) => {
 	.setTitle('Help for the bot')
 	.setURL('https://www.youtube.com/channel/UCZ9ScDckAO4oG8RgGAR6RLg')
 	.setAuthor('esmee#1413', 'https://cdn.discordapp.com/attachments/773879672676548609/773880038520127508/uhfi.jpg', 'https://www.esmee.club/')
-	.setDescription('Get more commands by typing /commands')
+	.setDescription('Get more information about the bot by typing /info')
 	.setThumbnail('https://cdn.discordapp.com/attachments/773879672676548609/773880508743680000/aiudha.jpg')
 	.addFields(
 		{ name: 'This message will automatically be deleted in 30 seconds!', value: 'These are all the commands:' },
