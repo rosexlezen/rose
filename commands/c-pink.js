@@ -1,4 +1,5 @@
 const discord = require("discord.js");
+const client = new discord.Client();
 const guild = client.guilds.cache.get("770516707370467328");
 
 module.exports.run = async(client, message, args) => {
