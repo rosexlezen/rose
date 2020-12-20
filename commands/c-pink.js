@@ -1,11 +1,11 @@
 const discord = require("discord.js");
+const guild = client.guilds.cache.get("770516707370467328");
 
 module.exports.run = async(client, message, args) => {
 
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Sorry but you cannot use this command!");
     if ((message.guild.channels.cache.find(c => c.name.toLowerCase() === "reactionroles"))) {
 
-    message.channel.send("A");
     guild.roles.create({ data: { name: 'test', color: ['#f9d4fa'] } });
     guild.roles.create({ data: { name: 'test1', color: ['#f599f7'] } });
 
