@@ -5,7 +5,7 @@ module.exports.run = async(client, message, args) => {
     if (!args[0]) return message.reply("please provide the names you want love check.");
     else if (!args[1]) return message.reply("please provide the names you want love check.");
 
-    if(arg[0] == "alex" && arg[1] == "dylan") {
+    if(args[0] == "alex" && args[1] == "dylan") {
         message.channel.send(`${message.author}, **${args[0]}** and **${args[1]}** are 102% in love`);
     }
 
