@@ -8,10 +8,10 @@ module.exports.run = async(client, message, args) => {
     if(args[0] == "alex" && args[1] == "dylan") {
         message.channel.send(`${message.author}, **${args[0]}** and **${args[1]}** are 102% in love`);
     }
-
+    else {
     var result = Math.ceil(Math.random() * 100);
     message.channel.send(`${message.author}, **${args[0]}** and **${args[1]}** are ${result}% in love`);
-
+}
 
 
 }
